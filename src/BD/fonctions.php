@@ -1,5 +1,5 @@
 <?php
-	//Auteur : Arnaud d'Alayer	Date : 2010-03-24
+	//Auteur : Arnaud d'Alayer	Date : 2010-03-29
 	
 	include "configuration.php";
 	include "bin/exist-phpapi/exist_phpapi.inc";
@@ -48,7 +48,16 @@
 		
 		$result = $db->executeQuery($xquery);
 		//obtenir le résultat de la requête sous forme d'une Chaine de caractères
-		return $db->retrieve($result, 0);
+		$num = 0;
+		$sortie = "";
+		while ( $db->retrieve($result, $num)!=""){
+			$sortie = $sortie . $db->retrieve($result, $num) . "\n";
+			$num++;
+		}
+		/*echo "<hr/>" . $db->retrieve($result, 0);
+		echo "<hr/>" . $db->retrieve($result, 1);*/
+		
+		return $sortie;
 
 	}
 	
@@ -89,7 +98,7 @@
 				break;
 			case "pre" :
 				echo "\n<pre>\n";
-				echo surligne(htmlspecialchars($result), $surligne);
+				echo htmlspecialchars($result);
 				echo "\n</pre>\n";
 				break;
 			default :
