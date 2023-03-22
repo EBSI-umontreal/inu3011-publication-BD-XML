@@ -34,7 +34,7 @@ $result = str_replace('<_kxz_4>', '_kxz_4', $result);
 
 $result = str_replace('<_kxz_5>_kxz_5</_kxz_5>', '_kxz_5/_kxz_5', $result); // Résultat vide
 $result = str_replace('<_kxz_5 ', '_kxz_5', $result); // Le résultat est un noeud attribut
-$result = str_replace('>_kxz_5</_kxz_5>', '/_kxz_5', $result);
+$result = str_replace('">_kxz_5</_kxz_5>', '"/_kxz_5', $result);
 $result = str_replace('<_kxz_5>', '_kxz_5', $result); // Le résultat n'est ni un noeud attribut ni vide
 $result = str_replace('_kxz_5</_kxz_5>', '/_kxz_5', $result);
 

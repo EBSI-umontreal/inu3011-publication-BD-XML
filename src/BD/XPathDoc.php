@@ -20,16 +20,18 @@
 	include "fonctions.php";
 //Récupérer les paramètres HTTP
 	$XPathOrig = stripslashes($_GET['rechercheXPath']);
-	$rechercheXPath = $XPathOrig;
 
 // Traitement identique à celui de XPath.php:
 // quoteAwareStrRep fait un remplacement de chaîne de façon "attentive aux guillemets"
 // N.B.: Cela fonctionne avec la syntaxe XQuery, où les guillemets à l'intérieur des
 // chaînes sont simplement doublés (ou encore on utilise les entités &amp; ou &apos;)
 // Tous ces cas sont traités correctement par quoteAwareStrRep
-	$rechercheXPath = quoteAwareStrRep(' ', '', $rechercheXPath); // Remove all spaces (except within quotes)
-	$rechercheXPath = quoteAwareStrRep('	', '', $rechercheXPath); // Remove all tabs (except within quotes)
+	$XPathOrig = quoteAwareStrRep(' ', '', $XPathOrig); // Remove all spaces (except within quotes)
+	$XPathOrig = quoteAwareStrRep('	', '', $XPathOrig); // Remove all tabs (except within quotes)
 // Un peu drastique, enlever les espaces et des tabs, mais au pire ça corrige des erreurs, ça ne peut pas en causer
+
+	$rechercheXPath = $XPathOrig;
+
 	$rechercheXPath = quoteAwareStrRep('(/', '($doc/', $rechercheXPath);
 	$rechercheXPath = quoteAwareStrRep('|/', '|$doc/', $rechercheXPath);
 	$rechercheXPath = quoteAwareStrRep('[/', '[$doc/', $rechercheXPath);
@@ -42,7 +44,8 @@
 
 // À cause d'un bug de eXist, il faut aussi remplacer les * par *[position()] (croyez-le ou non!!!)
 // qui, en principe, est un synonyme exact
-	$rechercheXPath = quoteAwareStrRep('*', '*[position()]', $rechercheXPath);
+//	$rechercheXPath = quoteAwareStrRep('*', '*[position()]', $rechercheXPath);
+// 2012-09-23: Après tests, ça ne semble plus nécessaire avec la nouvelle version (2.0)
 
 // Lecture du fichier "xquery/_XPathDoc.xquery" et remplacer les chaînes NOMBASEDONNEE 
 // et RECHERCHEXPATH par les bonnes valeurs

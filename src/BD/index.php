@@ -1,10 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
 <HTML> 
   <HEAD> <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"> 
-	 <TITLE>INU3011 - Base de données "Les poissons exotiques"</TITLE> 
+	 <TITLE>INU3011 - Application d'interrogation de votre BD eXist</TITLE> 
   </HEAD> 
-  <BODY>
-	 <H1>INU3011 - Base de données "Les poissons exotiques"</H1>
+  <BODY> 
+	 <H1>INU3011 - Application d'interrogation de votre BD eXist</H1> 
+	 <P>Rappel: Modifiez le fichier <TT>configuration.php</TT>
+	 tel qu'expliqué dans le protocole</P>
 <HR> 
 	 <H3>Recherche de documents entiers par contenu dans le texte int&eacute;gral</H3>
 	 <FORM ACTION="pleinTexte.php" METHOD="get"> 
@@ -41,8 +43,9 @@
 		<TR><TD>&laquo;&nbsp;sauf&nbsp;&raquo;
 			 bool&eacute;en</TD><TD>NOT</TD><TD>am&eacute;rique NOT p&eacute;rou</TD><TD>On peut
 			 utiliser &laquo;&nbsp;!&nbsp;&raquo; au lieu de &laquo;&nbsp;NOT&nbsp;&raquo;.<BR>
-			 Le critère est satisfait s'<EM>il existe au moins un</EM> élément ou attribut
-			 dont le contenu textuel contient le premier mot sans contenir le second.</TD>
+			 Le critère est satisfait si le contenu textuel du document contient le premier mot 
+			 sans contenir le second ou s'<EM>il existe au moins un</EM> attribut
+			 dont la valeur contient le premier mot sans contenir le second.</TD>
 		</TR>
 		<TR><TD>troncature</TD><TD>*</TD><TD>mang*</TD><TD>Utilisable au milieu
 			 ou &agrave; la fin d'un terme, mais pas au d&eacute;but.<BR>
@@ -83,34 +86,7 @@ non vide) lorsque appliquée à ce document.</SMALL></P>
 	VALUE="&Eacute;valuer l'expression XPath absolue sur chaque document"></P>
 		</FORM>
 <HR>
-<!--
-	 <H3>Recherche dans un noeud propos&eacute; dans une liste au choix</H3> 
-	 <FORM ACTION="XPath-choix.php" METHOD="get"> 
-		<P>
-			<INPUT NAME="rechercheTexte" TYPE="text" SIZE="70">
-			<SELECT NAME="nomRequete">
-				<OPTION VALUE="nomsci">Nom scientifique</OPTION>
-				<OPTION VALUE="origine">Lieu d'origine</OPTION>
-				<OPTION VALUE="couleur">Couleur</OPTION>
-			</SELECT> 
-			<INPUT TYPE="submit" VALUE="Rechercher dans le texte int&eacute;gral">
-		</P>
-	</FORM> 
-<HR>
--->
-	 <H3>Recherches pr&eacute;enregistr&eacute;es</H3> 
-	 <UL> 
-		<LI><A
-		  HREF="xquery.php?fichierXquery=demo_listePoissons.xquery&amp;format=brut">Liste
-		  de tous les poissons dans la base de donn&eacute;es</A></LI> 
-		<LI><A
-		  HREF="xquery.php?fichierXquery=demo_listeFamilles.xquery&amp;format=brut">Liste
-		  des familles de poissons dans la base de donn&eacute;es</A></LI> 
-		<LI><A
-		  HREF="xquery.php?fichierXquery=demo_listePoissonsParFamille.xquery&amp;format=brut">Liste
-		  des poissons par famille (ordre alphab&eacute;tique inverse)</A></LI> 
-	 </UL> <HR> 
-	 <H3>Liste de toutes les fish (oh, pardon! fiches) dans la BD</H3>
+	 <H3>Liste de tous les documents dans la BD</H3>
 <?PHP 	include "fonctions.php";
 	$xquery = lireFichier("xquery/_listeDocuments.xquery");
 	$xquery = str_replace("NOMBASEDONNEE", $nomBaseDeDonnees, $xquery);

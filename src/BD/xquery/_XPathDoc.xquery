@@ -7,7 +7,7 @@ let $res := (
 	 where (RECHERCHEXPATH)
 	 return
 	  <li>
-		{substring(base-uri($doc), $drop)}
+		{substring(base-uri($doc), $drop)} &#32;
 		<a href="document.php?document={base-uri($doc)}&amp;format=pre">[Source XML]</a>
 		<a href="document.php?document={base-uri($doc)}&amp;format=xslt&amp;xslt=stylage.xsl"
 		>[Document styl&#233;]</a>

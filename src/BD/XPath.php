@@ -17,16 +17,18 @@ Paramètres de cette page :
 	include "fonctions.php";
 //Récupérer les paramètres HTTP
 	$XPathOrig = stripslashes($_GET['rechercheXPath']);
-	$rechercheXPath = $XPathOrig;
 
 // Traitement identique à celui de XPathDoc.php:
 // quoteAwareStrRep fait un remplacement de chaîne de façon "attentive aux guillemets"
 // N.B.: Cela fonctionne avec la syntaxe XQuery, où les guillemets à l'intérieur des
 // chaînes sont simplement doublés (ou encore on utilise les entités &amp; ou &apos;)
 // Tous ces cas sont traités correctement par quoteAwareStrRep
-	$rechercheXPath = quoteAwareStrRep(' ', '', $rechercheXPath); // Remove all spaces (except within quotes)
-	$rechercheXPath = quoteAwareStrRep('	', '', $rechercheXPath); // Remove all tabs (except within quotes)
+	$XPathOrig = quoteAwareStrRep(' ', '', $XPathOrig); // Remove all spaces (except within quotes)
+	$XPathOrig = quoteAwareStrRep('	', '', $XPathOrig); // Remove all tabs (except within quotes)
 // Un peu drastique, enlever les espaces et des tabs, mais au pire ça corrige des erreurs, ça ne peut pas en causer
+
+	$rechercheXPath = $XPathOrig;
+
 	$rechercheXPath = quoteAwareStrRep('(/', '($doc/', $rechercheXPath);
 	$rechercheXPath = quoteAwareStrRep('|/', '|$doc/', $rechercheXPath);
 	$rechercheXPath = quoteAwareStrRep('[/', '[$doc/', $rechercheXPath);

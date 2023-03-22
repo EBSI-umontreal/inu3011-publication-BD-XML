@@ -41,8 +41,9 @@
 		<TR><TD>&laquo;&nbsp;sauf&nbsp;&raquo;
 			 bool&eacute;en</TD><TD>NOT</TD><TD>am&eacute;rique NOT p&eacute;rou</TD><TD>On peut
 			 utiliser &laquo;&nbsp;!&nbsp;&raquo; au lieu de &laquo;&nbsp;NOT&nbsp;&raquo;.<BR>
-			 Le critère est satisfait s'<EM>il existe au moins un</EM> élément ou attribut
-			 dont le contenu textuel contient le premier mot sans contenir le second.</TD>
+			 Le critère est satisfait si le contenu textuel du document contient le premier mot 
+			 sans contenir le second ou s'<EM>il existe au moins un</EM> attribut
+			 dont la valeur contient le premier mot sans contenir le second.</TD>
 		</TR>
 		<TR><TD>troncature</TD><TD>*</TD><TD>mang*</TD><TD>Utilisable au milieu
 			 ou &agrave; la fin d'un terme, mais pas au d&eacute;but.<BR>
