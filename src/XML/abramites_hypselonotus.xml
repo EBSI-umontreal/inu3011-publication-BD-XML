@@ -1,0 +1,52 @@
+<poisson>
+      <noms>
+            <nom-scientifique>Abramites hypselonotus</nom-scientifique>
+            <nom-commun langue="fr">Abramites</nom-commun>
+            <nom-commun langue="fr">Bramites</nom-commun>
+            <nom-commun langue="en">High-backed headstander</nom-commun>
+            <nom-commun langue="en">Marbled headstander</nom-commun>
+      </noms>
+      <famille>Anostomidés</famille>
+      <origines>
+            <origine source="geoethno">Amérique - Amérique du sud - Pérou - Amazonas </origine>
+            <origine source="libre">Bassin de l'Orénoque </origine>
+            <origine source="libre">Bassin de l'Amazone </origine>
+      </origines>
+      <descripteur>
+            <nom-descripteur>Günther</nom-descripteur>
+            <première-description>1868</première-description>
+      </descripteur>
+      <taille>
+            <mâle>
+                  <moy>14.0</moy>
+            </mâle>
+            <femelle>
+                  <moy>14.0</moy>
+            </femelle>
+      </taille>
+      <qualité-eau>
+            <température>
+                  <min>23</min>
+                  <max>27</max>
+            </température>
+            <ph>
+                  <min>6.0</min>
+                  <max>7.5</max>
+            </ph>
+            <dureté>
+                  <min>4</min>
+                  <max>15</max>
+            </dureté>
+      </qualité-eau>
+      <zone-vie>Milieu et inférieure</zone-vie>
+      <alimentation>
+            <para>Il est herbivore. </para>
+            <para>Lui fournir régulièrement de la nourriture végétale pour éviter qu'il s'attaque aux plantes de l'aquarium. </para>
+      </alimentation>
+      <dimorphisme>
+            <para>Impossible à déterminer à l'oeil nu. </para>
+      </dimorphisme>
+      <comportement>
+            <para>Les jeunes s'adaptent bien à l'aquarium communautaire mais, en grandissant, ils deviennent intolérants vis-à-vis les poisons de leur propre espèce. </para>
+      </comportement>
+</poisson>

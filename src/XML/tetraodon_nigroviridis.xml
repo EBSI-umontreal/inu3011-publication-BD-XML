@@ -1,0 +1,48 @@
+<poisson>
+  <noms>
+    <nom-scientifique>Tetraodon nigroviridis</nom-scientifique>
+    <nom-commun langue="en">Spotted Green Pufferfish</nom-commun>
+  </noms>
+  <famille>Tetraodontidés</famille>
+  <origines>
+    <origine source="geoethno">Asie - Asie du Sud-Est</origine>
+    <commentaires>
+      <para>Plus précisément, voici les pays du Sud-Est où on le retrouve: Cambodge, Indonesie, Malaisie, Myanmar, Philippines, Sri Lanka, Thailand et Vietnam.</para>
+    </commentaires>
+  </origines>
+  <descripteur>
+    <nom-descripteur>Marion de Procé</nom-descripteur>
+    <première-description>1822</première-description>
+  </descripteur>
+  <taille>
+    <moy>15.0</moy>
+  </taille>
+  <qualité-eau>
+    <température>
+      <min>24</min>
+      <max>28</max>
+    </température>
+    <ph>
+      <min>8.0</min>
+      <max>8.0</max>
+    </ph>
+    <dureté>
+      <min>9</min>
+      <max>19</max>
+    </dureté>
+  </qualité-eau>
+  <zone-vie>Milieu et inférieure</zone-vie>
+  <alimentation>
+    <para>Il se nourrit surtout de nourriture séchée ou vivante, et également de krill. Attention, ce poisson mange tous les escargots qu'il voit, il en vide donc les bacs. </para>
+  </alimentation>
+  <description>
+    <para>Il ressemble beaucoup au Tétraodon schoutedeni. Il est d'un vert clair, avec des taches noires. </para>
+    <para>Il n'est pas possible de le maintenir à long terme en eau douce mais en eau saumâtre, sa maintenance n’est plus un problème. Ces poissons sont robustes et peu enclins aux maladies. </para>
+  </description>
+  <comportement>
+    <para>Occasionnellement, certains individus endommagent les nageoires des autres poissons et d'autres se comportent agressivement envers les membres de leur propre espèce, mais heureusement ces deux types de comportement sont plutôt des exceptions à la règle. </para>
+  </comportement>
+  <reproduction>
+    <para>Le tétraodon nigroviridis est un pondeur sur substrat. La ponte est gardée par le mâle jusqu'à l’éclosion. </para>
+  </reproduction>
+</poisson>

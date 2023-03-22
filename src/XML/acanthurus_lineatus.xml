@@ -1,0 +1,47 @@
+<poisson>
+      <noms>
+            <nom-scientifique>Acanthurus lineatus</nom-scientifique>
+            <nom-commun langue="fr">Acanthure clown</nom-commun>
+            <nom-commun langue="fr">Chirurgien rayé</nom-commun>
+            <nom-commun langue="en">Lined surgeonfish</nom-commun>
+      </noms>
+      <famille>Acanthuridés</famille>
+      <origines>
+            <origine source="libre"> Océan Indien </origine>
+            <commentaires>
+                  <para> Pacifique sud de l'est africain aux îles marquises. </para>
+            </commentaires>
+      </origines>
+      <descripteur>
+            <nom-descripteur>Linnaeus</nom-descripteur>
+            <première-description>1758</première-description>
+      </descripteur>
+      <taille>
+            <mâle>
+                  <moy>20.0</moy>
+            </mâle>
+            <femelle>
+                  <moy>20.0</moy>
+            </femelle>
+      </taille>
+      <qualité-eau>
+            <température>
+                  <min>24</min>
+                  <max>30</max>
+            </température>
+            <ph>
+                  <min>7.5</min>
+                  <max>8.5</max>
+            </ph>
+      </qualité-eau>
+      <description>
+            <para> Les scalpels sont situés sur la queue, en avant de la nageoire caudale. </para>
+      </description>
+      <dimorphisme>
+            <para> Les mâles deviennent plus grands que les femelles. </para>
+      </dimorphisme>
+      <comportement>
+            <para> Il est agressif envers ses congénères, les poissons possédant une robe similaire, les poissons plus gros et les nouveaux arrivants. </para>
+            <para> C'est un poisson belliqueux. </para>
+      </comportement>
+</poisson>

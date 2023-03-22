@@ -1,0 +1,41 @@
+<poisson>
+  <noms>
+    <nom-scientifique>Chromobotia macracanthus</nom-scientifique>
+    <nom-commun langue="en">Botia Macracanta</nom-commun>
+    <nom-commun langue="fr">Loche Clown</nom-commun>
+    <nom-commun langue="en">Clown</nom-commun>
+    <nom-commun langue="en">Botia Clown</nom-commun>
+  </noms>
+  <famille>Cobitidés</famille>
+  <origines>
+    <origine source="geoethno">Asie - Asie du Sud-Est - Indonésie</origine>
+  </origines>
+  <taille>
+    <min>5</min>
+    <max>40</max>
+    <commentaires>
+      <para>Souvent vendu très jeune à une taille de 5cm, ce poisson peut atteindre les 40cm une fois adulte.</para>
+    </commentaires>
+  </taille>
+  <alimentation>
+    <para>L'appellation populaire de ce poisson nous renseigne très bien sur ses préférences alimentaires. Un de ses mets préférés sont les escargots. Cependant, ils acceptent très bien les pastilles pour poisson de fond.</para>
+    <para>Attention, les botias ont également un autre plat de prédilection : les crevettes! Faire cohabiter les deux est donc très risqué pour nos amies à carapace!</para>
+  </alimentation>
+  <description>
+    <para>Poisson de fond au ventre plat. Le corps est fuselé chez les juvéniles mais devient plus trapu en vieillissant. De couleur orangée, son corps est strié de 3 bandes noires assez larges. La première bande se situe sur la tête et passe sur l'œil, la seconde se situe au niveau de la nageoire dorsale et la 3e est à la base de la caudale. Sous les yeux, le Botia possède une épine osseuse qui lui sert à extraire les escargots de leurs coquilles (attention donc à cette épine lorsqu'on veut saisir un Botia que ce soit à l'épuisette ou à la main). Dans son pays d'origine il est pêché pour sa chair succulente, très appréciée des gastronomes locaux</para>
+  </description>
+  <comportement>
+    <section>
+      <titre>Caractère</titre>
+      <para>Il ne porte pas l'appellation "clown" pour rien. C'est un poisson qui peut un instant être très vif et prendre le bac pour une piste d'athlétisme et l'instant d'après sembler "mort", au fond du bac, couché sur le dos. Calme et paisibles, ils ne sont pas agressifs envers les autres occupants de leur bac. Cependant, à cause de leur tempérament de boute-en-train, il est déconseillé de les maintenir avec des espèces craintives qu'ils pourraient "stresser" par leur activité incessante.</para>
+      <para>Au moment du repas ou en cas d'attaque, les botias peuvent émettre des cliquetis tout à fait audible, même si on se trouve éloignés de l'aquarium, qui ressemblent au bruit que font deux pierres qu'on entrechoque.</para>
+    </section>
+    <section>
+      <titre>Sociabilité</titre>
+      <para>Les botias sont des poissons grégaires, il faut donc les maintenir en groupe de 5 à 6 individus au minimum. Dés lors, étant donné leur grande taille une fois adultes, il faut pouvoir leur offrir un aquarium d'un volume correspondant à leurs besoins. Il faut donc compter 500l (oui oui, 500l) pour héberger un petit groupe.</para>
+    </section>
+  </comportement>
+  <reproduction>
+    <para>Très rare en aquarium. Les éleveurs les reproduisent soit en semi liberté soit par administration de stimulants hormonaux.</para>
+  </reproduction>
+</poisson>

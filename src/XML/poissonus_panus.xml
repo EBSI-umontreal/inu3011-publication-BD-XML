@@ -1,0 +1,45 @@
+<poisson>
+      <noms>
+            <nom-scientifique>Poissonus panus</nom-scientifique>
+            <nom-commun langue="fr">Poisson pané</nom-commun>
+      </noms>
+      <famille>Joke</famille>
+      <origines>
+            <origine source="libre">Rayon surgelés</origine>
+            <commentaires>
+                  <para>Existe plusieurs variétés : panure croustillante, au citron, à l’estragon.</para>
+            </commentaires>
+      </origines>
+      <taille>
+            <min>4</min>
+            <max>15</max>
+            <commentaires>
+                  <para>La taille peut varier selon s'il est en en forme de filet ou de bâtonnet.</para>
+            </commentaires>
+      </taille>
+      <longévité>
+            <max>P1Y</max>
+            <commentaires>
+                  <para>Conserver au maximun 1 an dans le congélateur pour préserver le goût.</para>
+                  <para>Sa chance de survivre diminue fortement dés qu'il se trouve dans une assiette.</para>
+            </commentaires>
+      </longévité>
+      <qualité-eau>
+            <température>
+                  <min>300</min>
+                  <max>350</max>
+                  <commentaires>
+                        <para>Faire cuire au four pendant 15 à 20 minutes.</para>
+                  </commentaires>
+            </température>
+      </qualité-eau>
+      <alimentation>
+            <para>Poisson très économe, il n'est pas nécessaire de le nourrir.</para>
+      </alimentation>
+      <description>
+            <para>Généralement de couleur jaune, il se présente sous forme de filet ou de bâtonnet.</para>
+      </description>
+      <comportement>
+            <para>Poisson très calme dans sa boite. Attention, il peut vous bruler si vous tenter de le manger quand il vient juste de sortir du four.</para>
+      </comportement>
+</poisson>

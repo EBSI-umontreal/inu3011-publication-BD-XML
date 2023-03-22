@@ -1,0 +1,15 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>SCI6132 - Afficher document <?php echo $fichierXquery; ?> </title>
+	</head>
+	<body>
+		<h1>SCI6132 - Afficher document <?php echo $fichierXquery; ?> </h1>
+		<?php
+			$result = executerXquery('doc("' . $document . '")/*');
+			afficherResultat($result, $format);
+		?>
+		<p><a href="document.php?document=<?php echo $document; ?>&format=xml">[Voir sortie XML]</a></p>
+	</body>
+</html>

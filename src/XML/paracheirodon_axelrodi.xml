@@ -1,0 +1,70 @@
+<poisson>
+  <noms>
+    <nom-scientifique>Paracheirodon axelrodi</nom-scientifique>
+    <nom-commun langue="fr">Cardinalis</nom-commun>
+    <nom-commun langue="fr">Cheirondon axelrodi</nom-commun>
+    <nom-commun langue="fr">Chort</nom-commun>
+    <nom-commun langue="fr">Neon cardinalis</nom-commun>
+    <nom-commun langue="fr">Tétra Cardinal</nom-commun>
+  </noms>
+  <famille>Characidés</famille>
+  <origines>
+    <origine source="geoethno"> Amérique - Amérique du Sud - Uruguay - Rìo Negro </origine>
+    <origine source="libre"> Amérique du sud - Rio negro </origine>
+    <origine source="libre"> Amérique du sud - Bassin de l'Orénoque </origine>
+  </origines>
+  <descripteur>
+    <nom-descripteur>Schultz</nom-descripteur>
+    <première-description>1956</première-description>
+  </descripteur>
+  <taille>
+    <mâle>
+      <moy>5.0</moy>
+    </mâle>
+    <femelle>
+      <moy>5.0</moy>
+    </femelle>
+  </taille>
+  <longévité>
+    <min>P2Y</min>
+    <max>P8Y</max>
+  </longévité>
+  <qualité-eau>
+    <température>
+      <min>25</min>
+      <max>30</max>
+      <commentaires>
+        <para>23 °C pour la reproduction</para>
+      </commentaires>
+    </température>
+    <ph>
+      <min>5</min>
+      <max>7</max>
+      <commentaires>
+        <para>6 pour la reproduction</para>
+      </commentaires>
+    </ph>
+    <dureté>
+      <min>1</min>
+      <max>8</max>
+      <commentaires>
+        <para>2 pour la reproduction</para>
+      </commentaires>
+    </dureté>
+  </qualité-eau>
+  <zone-vie>Milieu</zone-vie>
+  <alimentation>
+    <para> C'est un insectivore en milieu naturel. </para>
+  </alimentation>
+  <description>
+    <para> Le corps est divisé en 3 bandes horizontales différemment pigmentées, de haut en bas : brun, bleu fluorescent et rouge fluorescent. Le ventre est blanc. </para>
+    <para> Souvent confondu avec le Paracheirodon innesi (Néon), il se démarque de ce dernier par la bande rouge sur la partie inférieure du corps qui s'étend du museau jusqu'à la caudale. </para>
+  </description>
+  <dimorphisme>
+    <para> Chez l'adulte, le mâle est plus fin que la femelle. </para>
+  </dimorphisme>
+  <comportement>
+    <para> Le Cardinalis vit en banc. Lorsqu'il se sent en sécurité, le groupe s'éparpille, mais ces poissons ont besoin de pouvoir se regrouper en cas de stress passager. De ce fait, il doit être introduit au nombre de 10 individus minimum pour se sentir en sécurité. Dans la nature, les Cardinalis forment en effet des bancs de plusieurs milliers d'individus. Dans le cas contraire, ils risquent de développer des maladies dûes au stress. </para>
+    <para> C'est un poisson très vif qui préfère une eau douce et acide. </para>
+  </comportement>
+</poisson>

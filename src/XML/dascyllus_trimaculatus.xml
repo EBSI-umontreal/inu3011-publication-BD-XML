@@ -1,0 +1,52 @@
+<poisson>
+      <noms>
+            <nom-scientifique>Dascyllus trimaculatus</nom-scientifique>
+            <nom-commun langue="fr">demoiselle à trois taches</nom-commun>
+            <nom-commun langue="en">Threespot dascyllus</nom-commun>
+      </noms>
+      <famille>Pomacentridés</famille>
+      <origines>
+            <origine source="libre">Asie - Océan Indien</origine>
+            <commentaires>
+                  <para> De l'océan Indien à l'ouest de l'océan Pacifique et de la mer Rouge à l'Australie. </para>
+            </commentaires>
+      </origines>
+      <descripteur>
+            <nom-descripteur>Rüppell</nom-descripteur>
+            <première-description>1829</première-description>
+      </descripteur>
+      <taille>
+            <mâle>
+                  <moy>14.0</moy>
+            </mâle>
+            <femelle>
+                  <moy>14.0</moy>
+            </femelle>
+      </taille>
+      <longévité>
+            <moy>P8Y</moy>
+      </longévité>
+      <qualité-eau>
+            <température>
+                  <min>23</min>
+                  <max>24</max>
+            </température>
+            <ph>
+                  <min>7</min>
+                  <max>8</max>
+            </ph>
+      </qualité-eau>
+      <zone-vie>Milieu et inférieure</zone-vie>
+      <description>
+            <para> Ces poissons sont de couleur bleue pâle, avec une tache blanche sur chaque flanc, une tête jaune or et des nageoires noires. </para>
+      </description>
+      <dimorphisme>
+            <para> Aucune différence. </para>
+      </dimorphisme>
+      <comportement>
+            <para> Les jeunes sont pacifiques et vivent en groupe, à proximité d'une grande anémone de mer. Les adultes sont plus hergneux. </para>
+      </comportement>
+      <reproduction>
+            <para> La ponte a lieu auprès d'une anémone, d'un corail ou d'une simple roche. Les larves sont nourries de rotifères. </para>
+      </reproduction>
+</poisson>
