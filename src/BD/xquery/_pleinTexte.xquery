@@ -1,10 +1,22 @@
-(: Note : cette requÃªte XQuery ne peut Ãªtre exploitÃ©e directement, elle doit Ãªtre adaptÃ©e par le serveur :)
+(: Note : cette requête XQuery ne peut être exploitée directement,
+elle doit être adaptée par le serveur :)
+<div>
+<p>Nombre de documents trouv&#233;s:
+  {count(collection('/db/NOMBASEDONNEE')/*[ft:query(., 'RECHERCHETEXTE')])}
+  sur
+  {count(collection('/db/NOMBASEDONNEE'))}
+</p>
 <ul> {
 	for $doc in collection('/db/NOMBASEDONNEE')
 	where $doc//*[ft:query(., 'RECHERCHETEXTE')]
 	return
 		<li>
-			{document-uri($doc)} &#160;<a href="document.php?document={document-uri($doc)}&amp;format=pre">[Source]</a> <a href="document.php?document={document-uri($doc)}&amp;format=xml">[XML]</a>
+{substring(document-uri($doc), string-length('NOMBASEDONNEE')+6)} &#160;
+<a href="document.php?document={document-uri($doc)}&amp;format=pre">[Source XML]</a>
+<!-- <a href="document.php?document={document-uri($doc)}&amp;format=xml">[XML]</a> -->
+<a href="document.php?document={document-uri($doc)}&amp;format=xslt&amp;xslt=stylage.xsl"
+>[Document styl&#233;]</a>
 		</li>
 }
 </ul>
+</div>

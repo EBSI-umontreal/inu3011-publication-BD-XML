@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>INU3011 - Expression XPath évaluée sur chaque document</title>
+	</head>
+	<body>
+<h1>INU3011 - Expression XPath évaluée sur chaque document</h1>
+<h2>Expression XPath: <tt><?php echo htmlspecialchars($XPathOrig); ?></tt></h2>
+<!--
+<h2>Expression modifiée: <tt><?php echo htmlspecialchars($rechercheXPath); ?></tt></h2>
+-->
+<?php
+// Tout ca à nettoyer éventuellement:
+
+$result = executerXquery($xquery);
+
+// echo '<pre>'.htmlspecialchars($result).'</pre>';
+
+$result = str_replace('<_kxz_0>', '_kxz_0', $result);
+$result = str_replace('</_kxz_0>', '/_kxz_0', $result);
+$result = str_replace('</_kxz_1>', '/_kxz_1', $result);
+$result = str_replace('<_kxz_1>', '_kxz_1', $result);
+$result = str_replace('<_kxz_2>', '_kxz_2', $result);
+$result = str_replace('</_kxz_2>', '/_kxz_2', $result);
+$result = str_replace('</_kxz_3>', '/_kxz_3', $result);
+$result = str_replace('<_kxz_3>', '_kxz_3', $result);
+$result = str_replace('</_kxz_4>', '/_kxz_4', $result);
+$result = str_replace('<_kxz_4>', '_kxz_4', $result);
+
+// Si un résultat est un noeud-attribut, alors le résultat <_kxz_5> a cette
+// allure: <_kxz_5 attrib="valeur">_kxz_5</_kxz_5>
+// Il faut aussi traiter ce cas. L'ordre des remplacements importe!
+
+$result = str_replace('<_kxz_5>_kxz_5</_kxz_5>', '_kxz_5/_kxz_5', $result); // Résultat vide
+$result = str_replace('<_kxz_5 ', '_kxz_5', $result); // Le résultat est un noeud attribut
+$result = str_replace('>_kxz_5</_kxz_5>', '/_kxz_5', $result);
+$result = str_replace('<_kxz_5>', '_kxz_5', $result); // Le résultat n'est ni un noeud attribut ni vide
+$result = str_replace('_kxz_5</_kxz_5>', '/_kxz_5', $result);
+
+$result = str_replace('<_kxz_4/>', '', $result); // Pas de résultat pour ce document
+
+$result = htmlspecialchars($result);
+
+$result = str_replace('/_kxz_0', '</div>', $result);
+$result = str_replace('_kxz_0', '<div>', $result);
+$result = str_replace('/_kxz_1', '</ul>', $result);
+$result = str_replace('_kxz_1', '<ul>', $result);
+$result = str_replace('/_kxz_2', '</li>', $result);
+$result = str_replace('_kxz_2', '<li>', $result);
+$result = str_replace('/_kxz_3', '</p>', $result);
+$result = str_replace('_kxz_3', '<p>', $result);
+$result = str_replace('/_kxz_4', '</ol>', $result);
+$result = str_replace('_kxz_4', '<ol>', $result);
+
+$result = str_replace('/_kxz_5', '</pre></li>', $result);
+$result = str_replace('_kxz_5', '<li><pre>', $result);
+
+echo $result;
+//	afficherResultat($result, "brut");
+?>
+	</body>
+</html>

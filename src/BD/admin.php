@@ -9,10 +9,10 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>SCI6132 - eXist</title>
+		<title>INU3011 - eXist</title>
 	</head>
 	<body>
-		<h1>SCI6132 - eXist</h1>
+		<h1>INU3011 - eXist</h1>
 		<?php
 		if ($rechercheXQuery != ''){
 			echo "<h2>Résultat recherche XQuery</h2>";
@@ -31,7 +31,7 @@
 			<textarea name="rechercheXQuery" rows="5" cols="50"></textarea>
 			<input type="submit"/>
 		</form>
-		<p>Utiliser des requêtes XQuery préenregistrées :</p>
+		<p>Utiliser des requêtes XQuery préenregistrées:</p>
 		<ul>
 		<?php
 		$iter = new DirectoryIterator("xquery");
@@ -42,10 +42,10 @@
 		}
 		?>
 		</ul>
-		<h2>État de la collection ("/db/<?php echo $nomBaseDeDonnées; ?>")</h2>
+		<h2>État de la collection ("/db/<?php echo $nomBaseDeDonnees; ?>")</h2>
 		<?php
 		$xquery = lireFichier("xquery/_listeDocuments.xquery");
-		$xquery = str_replace("NOMBASEDONNEE", $nomBaseDeDonnées, $xquery);
+		$xquery = str_replace("NOMBASEDONNEE", $nomBaseDeDonnees, $xquery);
 		echo afficherResultat(executerXquery($xquery), "brut");
 		?>
 	</body>

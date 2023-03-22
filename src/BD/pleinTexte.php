@@ -1,47 +1,47 @@
 <?php
 	//Auteur : Arnaud d'Alayer	Date : 2010-03-24
-	/*
+/*
 	fichier : pleinTexte.php
 	Description :
-		Ce fichier ex√©cute une requ√™te XQuery qui affiche sous forme de liste <ul> l'ensemble des documents qui r√©pondent √† l'expression re√ßue (param√®tre rechercheTexte).
-		Pour ce faire, il va lire le fichier "xquery/pleinTexte.xquery" et remplacer les cha√Ænes NOMBASEDONNEE et RECHERCHETEXTE par les bonnes valeurs (NOMBASEDONNEE = concat√©nation de "db/" + $nomBaseDeDonn√©es de configuration.php).
+		Ce fichier exÈcute une requÍte XQuery qui affiche sous forme de liste <ul> l'ensemble des documents qui rÈpondent ‡ l'expression reÁue (paramËtre rechercheTexte).
+		Pour ce faire, il va lire le fichier "xquery/_pleinTexte.xquery" et remplacer les chaÓnes NOMBASEDONNEE et RECHERCHETEXTE par les bonnes valeurs (NOMBASEDONNEE = $nomBaseDeDonnees de configuration.php).
 	
 	
-	Param√®tres de cette page :
-	- rechercheTexte (obligatoire - string) : terme ou expression √† rechercher
-	- afficherRequete (facultatif - bool√©en 0/1; 0 par d√©faut) : affiche un en-t√™te indiquant la requ√™te qui est envoy√©e √† la base de donn√©es (ne pas confondre avec $debug dans configuration.php)
+	ParamËtres de cette page :
+	- rechercheTexte (obligatoire - string) : terme ou expression ‡ rechercher
+	- afficherRequete (facultatif - boolÈen 0/1; 0 par dÈfaut) : affiche un en-tÍte indiquant la requÍte qui est envoyÈe ‡ la base de donnÈes (ne pas confondre avec $debug dans configuration.php)
 	
 	Exemples :
-	- recherchera le terme "abracadabra" et affichera l'en-t√™te : 
+	- recherchera le terme "abracadabra" et affichera l'en-tÍte : 
 	  pleinTexte.php?rechercheTexte=abracadabra&afficherRequete=1 
 	  
-	- recherchera l'expression "abrac*" et affichera l'en-t√™te : 
+	- recherchera l'expression "abrac*" et affichera l'en-tÍte : 
 	  pleinTexte.php?rechercheTexte=abrac*&afficherRequete=0
 	  ou
 	  pleinTexte.php?rechercheTexte=abrac*
 	
 	Pour personnaliser l'affichage de cette page, vous pouvez :
-	- √©diter le fichier "pleinTexte.inc.html"
-	- √©diter le fichier "xquery/pleinTexte.xquery"
-	*/
-	
-	
+	- Èditer le fichier "pleinTexte.inc.html"
+	- Èditer le fichier "xquery/_pleinTexte.xquery"
+*/
+
 	include "fonctions.php";
-	//R√©cup√©rer les param√®tres HTTP
+	//RÈcupÈrer les paramËtres HTTP
 	$rechercheTexte = stripslashes($_GET['rechercheTexte']);
+	$rechercheTexte = str_replace("'", "&apos;", $rechercheTexte);
 	$afficherRequete = $_GET['afficherRequete'];
 	
-	//V√©rifier qu'une expression de recherche est existante
+	//VÈrifier qu'une expression de recherche est existante
 	if ($rechercheTexte == ""){
 		//Si non, afficher un message d'erreur
-		die("Veuillez sp√©cifier un terme ou une expression √† rechercher");
+		die("Veuillez specifier un terme ou une expression a rechercher");
 	}
-	
-	//lecture du fichier "xquery/pleinTexte.xquery" et remplacer les cha√Ænes NOMBASEDONNEE et RECHERCHETEXTE par les bonnes valeurs
+
+	//lecture du fichier "xquery/_pleinTexte.xquery" et remplacer les chaÓnes NOMBASEDONNEE et RECHERCHETEXTE par les bonnes valeurs
 	$xquery = lireFichier("xquery/_pleinTexte.xquery");
-	$xquery = str_replace("NOMBASEDONNEE", $nomBaseDeDonn√©es, $xquery);
+	$xquery = str_replace("NOMBASEDONNEE", $nomBaseDeDonnees, $xquery);
 	$xquery = str_replace("RECHERCHETEXTE", $rechercheTexte, $xquery);
 	
-	//Inclure le fichier pleinTexte.inc.html personnalisant l'aspect du r√©sultat
+	//Inclure le fichier pleinTexte.inc.html personnalisant l'aspect du rÈsultat
 	include("pleinTexte.inc.html");
 ?>

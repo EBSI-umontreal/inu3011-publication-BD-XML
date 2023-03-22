@@ -2,6 +2,6 @@
     for $famille in fn:collection("/db/demo")//famille
     return
         <li>
-            {$famille}
+            {string($famille)}
         </li>
 } </ul>

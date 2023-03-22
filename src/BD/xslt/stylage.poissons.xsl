@@ -198,7 +198,7 @@
   
   <!--  ===== Affichage du pH idéal de l'eau ===== -->
   <xsl:template match="ph">
-    <dt>PH&#160;: <img src="../template-html/images/question.gif" alt="Plus d'information sur le pH" id="ancre-ph"/></dt>
+    <dt>pH&#160;:</dt>
     <xsl:apply-templates>
       <xsl:with-param name="unité">pH</xsl:with-param>
     </xsl:apply-templates>
@@ -206,7 +206,7 @@
   
   <!--  ===== Affichage du pH idéal de l'eau ===== -->
   <xsl:template match="dureté">
-    <dt>Dureté&#160;: <img src="../template-html/images/question.gif" alt="Plus d'information sur la dureté" id="ancre-gh"/></dt>
+    <dt>Dureté&#160;:</dt>
     <xsl:apply-templates>
       <xsl:with-param name="unité">°d GH</xsl:with-param>
     </xsl:apply-templates>
@@ -268,11 +268,11 @@
   <!-- Cas général -->
   <xsl:template match="min">
     <xsl:param name="unité"/>
-    <dd>Minimun&#160;: <xsl:value-of select="."/><xsl:text> </xsl:text><xsl:value-of select="$unité"/></dd>
+    <dd>Minimum&#160;: <xsl:value-of select="."/><xsl:text> </xsl:text><xsl:value-of select="$unité"/></dd>
   </xsl:template>
   <xsl:template match="max">
     <xsl:param name="unité"/>
-    <dd>Maximun&#160;: <xsl:value-of select="."/><xsl:text> </xsl:text><xsl:value-of select="$unité"/></dd>
+    <dd>Maximum&#160;: <xsl:value-of select="."/><xsl:text> </xsl:text><xsl:value-of select="$unité"/></dd>
   </xsl:template>
   <xsl:template match="moy">
     <xsl:param name="unité"/>
@@ -284,14 +284,14 @@
   
   <!-- Cas spécifique pour la longévité : on veut ajouter un s à 'an' si cette période est suppérieure à 1 an. -->
   <xsl:template match="longévité/min">
-    <dd>Minimun&#160;:
+    <dd>Minimum&#160;:
       <xsl:call-template name="affiche-âge">
         <xsl:with-param name="âge" select="."/>
       </xsl:call-template>
     </dd>
   </xsl:template>
   <xsl:template match="longévité/max">
-    <dd>Maximun&#160;:
+    <dd>Maximum&#160;:
       <xsl:call-template name="affiche-âge">
         <xsl:with-param name="âge" select="."/>
       </xsl:call-template>

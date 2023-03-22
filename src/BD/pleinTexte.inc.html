@@ -2,10 +2,11 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>SCI6132 - Recherche plein texte : <?php echo $rechercheTexte; ?> </title>
+		<title>INU3011 - Recherche dans le texte int&eacute;gral</title>
 	</head>
 	<body>
-		<h1>SCI6132 - Recherche plein texte : <?php echo $rechercheTexte; ?> </h1>
+<h1>INU3011 - Recherche dans le texte int&eacute;gral</h1>
+<h2>Recherche: <tt><?php echo $rechercheTexte; ?></tt></h2>
 		<?php
 			$result = executerXquery($xquery);
 			afficherResultat($result, "brut");

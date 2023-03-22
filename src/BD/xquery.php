@@ -54,7 +54,7 @@ switch($format){
 		break;
 	case "pre" :
 	case "brut" :
-		//contrairement aux autres cas, on execute la recherche à partir du fichier .inx.html pour que le résultat soit valide xhtml si nous demandons l'affichage de la requête
+		//contrairement aux autres cas, on execute la recherche à partir du fichier .inc.html pour que le résultat soit valide xhtml si nous demandons l'affichage de la requête
 		include("xquery.inc.html");
 		break;
 	default :

@@ -9,7 +9,7 @@
         for $doc in collection("/db/demo")
         where $doc//famille=$famille
         order by $doc//nom-scientifique/text() ascending
-            return <li><a href="document.php?document={document-uri($doc)}&amp;format=xslt&amp;xslt=demo_poissons.xsl">{$doc//nom-scientifique/text()}</a></li>
+            return <li><a href="document.php?document={document-uri($doc)}&amp;format=xslt&amp;xslt=stylage.xsl">{$doc//nom-scientifique/text()}</a></li>
         }
         </ul>
    </div>
