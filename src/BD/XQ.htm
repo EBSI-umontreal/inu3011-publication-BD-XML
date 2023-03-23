@@ -1,0 +1,22 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML> 
+  <HEAD> <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"> 
+	 <TITLE>INU3011 - Interrogation d'une BD eXist directement en XQuery</TITLE> 
+  </HEAD> 
+  <BODY> 
+	 <H1>INU3011 - Interrogation d'une BD eXist directement en XQuery</H1>
+	<HR> 
+	 <H2>Inscrire ou copier-coller la requête XQuery:</H2>
+	 <FORM ACTION="XQ.php" METHOD="GET">
+		<P>
+		<TEXTAREA ID="requete" NAME='requete' TYPE="text" ROWS="15"
+		COLS="100">for $doc in collection() return
+&lt;p> {substring-after(document-uri($doc), "/")} : {count($doc//node())} &lt;/p></TEXTAREA><BR>
+		  <INPUT TYPE="submit" VALUE="Exécuter la requête"></P>
+		</FORM> 
+	<HR>
+	<SCRIPT TYPE="text/javascript">
+	document.getElementById('requete').select();
+	</SCRIPT>
+  </BODY>
+</HTML>

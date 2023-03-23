@@ -1,47 +1,58 @@
-<poisson>
-      <noms>
-            <nom-scientifique>Acanthurus lineatus</nom-scientifique>
-            <nom-commun langue="fr">Acanthure clown</nom-commun>
-            <nom-commun langue="fr">Chirurgien ray√©</nom-commun>
-            <nom-commun langue="en">Lined surgeonfish</nom-commun>
-      </noms>
-      <famille>Acanthurid√©s</famille>
-      <origines>
-            <origine source="libre"> Oc√©an Indien </origine>
-            <commentaires>
-                  <para> Pacifique sud de l'est africain aux √Æles marquises. </para>
-            </commentaires>
-      </origines>
-      <descripteur>
-            <nom-descripteur>Linnaeus</nom-descripteur>
-            <premi√®re-description>1758</premi√®re-description>
-      </descripteur>
-      <taille>
-            <m√¢le>
-                  <moy>20.0</moy>
-            </m√¢le>
-            <femelle>
-                  <moy>20.0</moy>
-            </femelle>
-      </taille>
-      <qualit√©-eau>
-            <temp√©rature>
-                  <min>24</min>
-                  <max>30</max>
-            </temp√©rature>
-            <ph>
-                  <min>7.5</min>
-                  <max>8.5</max>
-            </ph>
-      </qualit√©-eau>
-      <description>
-            <para> Les scalpels sont situ√©s sur la queue, en avant de la nageoire caudale. </para>
-      </description>
-      <dimorphisme>
-            <para> Les m√¢les deviennent plus grands que les femelles. </para>
-      </dimorphisme>
-      <comportement>
-            <para> Il est agressif envers ses cong√©n√®res, les poissons poss√©dant une robe similaire, les poissons plus gros et les nouveaux arrivants. </para>
-            <para> C'est un poisson belliqueux. </para>
-      </comportement>
-</poisson>
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="../xslt/stylage-poissons-metrique.xsl"?>
+<!DOCTYPE fiche SYSTEM "../DTD/fiche-poisson.dtd" >
+<fiche image="oui" id="acanthurus_lineatus">
+  <mÈtadonnÈes>
+    <date-dern-modif>2016-03-28</date-dern-modif>
+    <crÈateur>Marilou Bourque</crÈateur>
+    <crÈateur>Arnaud d&#8217;Alayer</crÈateur>
+  </mÈtadonnÈes>
+  <poisson>
+    <noms>
+      <nom-scientifique>Acanthurus lineatus</nom-scientifique>
+      <nom-commun langue="fr">Acanthure clown</nom-commun>
+      <nom-commun langue="fr">Chirurgien rayÈ</nom-commun>
+      <nom-commun langue="en">Lined surgeonfish</nom-commun>
+    </noms>
+    <famille>AcanthuridÈs</famille>
+    <origines>
+      <origine>OcÈan Indien </origine>
+      <commentaires>
+        <para>Pacifique sud de l&#8217;est africain aux Óles marquises. </para>
+      </commentaires>
+    </origines>
+    <premiËre-description>
+      <nom-du-descripteur>Linnaeus</nom-du-descripteur>
+      <annÈe>1758</annÈe>
+    </premiËre-description>
+    <taille-cm>
+      <m‚le>
+        <moy>20.0</moy>
+      </m‚le>
+      <femelle>
+        <moy>20.0</moy>
+      </femelle>
+    </taille-cm>
+    <qualitÈ-eau>
+      <tempÈrature-C>
+        <min>24</min>
+        <max>30</max>
+      </tempÈrature-C>
+      <ph>
+        <min>7.5</min>
+        <max>8.5</max>
+      </ph>
+    </qualitÈ-eau>
+    <description>
+      <para>Les scalpels sont situÈs sur la queue, en avant de la nageoire caudale. </para>
+    </description>
+    <dimorphisme>
+      <para>Les m‚les deviennent plus grands que les femelles. </para>
+    </dimorphisme>
+    <comportement>
+      <para>Il est agressif envers ses congÈnËres, les poissons possÈdant une robe similaire, les
+        poissons plus gros et les nouveaux arrivants. </para>
+      <para>C&#8217;est un poisson belliqueux. </para>
+    </comportement>
+  </poisson>
+</fiche>

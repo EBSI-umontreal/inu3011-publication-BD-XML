@@ -33,7 +33,7 @@
 	include "fonctions.php";
 	$document = $_GET['document'];
 	$format = $_GET['format'];
-	$feuilleXSLT = $_GET['xslt'];
+//	$feuilleXSLT = $_GET['xslt'];
 
 function fixdocuri($docuri) {
 // YMA 2010-04-02

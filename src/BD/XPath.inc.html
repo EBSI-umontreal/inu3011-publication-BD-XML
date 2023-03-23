@@ -27,6 +27,10 @@ $result = str_replace('</_kxz_3>', '/_kxz_3', $result);
 $result = str_replace('<_kxz_3>', '_kxz_3', $result);
 $result = str_replace('</_kxz_4>', '/_kxz_4', $result);
 $result = str_replace('<_kxz_4>', '_kxz_4', $result);
+$result = str_replace('<_kxz_6>', '_kxz_6', $result);
+$result = str_replace('</_kxz_6>', '/_kxz_6', $result);
+$result = str_replace('<_kxz_7>', '_kxz_7', $result);
+$result = str_replace('</_kxz_7>', '/_kxz_7', $result);
 
 // Si un résultat est un noeud-attribut, alors le résultat <_kxz_5> a cette
 // allure: <_kxz_5 attrib="valeur">_kxz_5</_kxz_5>
@@ -52,6 +56,10 @@ $result = str_replace('/_kxz_3', '</p>', $result);
 $result = str_replace('_kxz_3', '<p>', $result);
 $result = str_replace('/_kxz_4', '</ol>', $result);
 $result = str_replace('_kxz_4', '<ol>', $result);
+$result = str_replace('/_kxz_6', '&format=pre">[Source XML]</a>', $result);
+$result = str_replace('_kxz_6', '<a href="', $result);
+$result = str_replace('/_kxz_7', '&format=xslt">[Document styl&#233;]</a>', $result);
+$result = str_replace('_kxz_7', '<a href="', $result);
 
 $result = str_replace('/_kxz_5', '</pre></li>', $result);
 $result = str_replace('_kxz_5', '<li><pre>', $result);

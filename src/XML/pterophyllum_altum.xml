@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="../xslt/stylage-poissons-metrique.xsl"?>
+<!DOCTYPE fiche SYSTEM "../DTD/fiche-poisson.dtd" >
+<fiche image="oui" id="pterophyllum-altum">
+  <métadonnées>
+    <date-dern-modif>2016-03-28</date-dern-modif>
+    <créateur>Marilou Bourque</créateur>
+    <créateur>Arnaud d&#8217;Alayer</créateur>
+  </métadonnées>
+  <poisson>
+    <noms>
+      <nom-scientifique>Pterophyllum altum</nom-scientifique>
+      <nom-commun langue="fr">Altum</nom-commun>
+      <nom-commun langue="fr">Scalaire</nom-commun>
+      <nom-commun langue="fr">Ange</nom-commun>
+    </noms>
+    <famille>Cichlidés</famille>
+    <origines>
+      <origine>Amérique - Amérique du Sud - Amazonie</origine>
+      <commentaires>
+        <para>Les spécimens utilisés par Pellegrin pour la description de l&#8217;espèce étaient
+          originaires du Rio Atabapo, dans le bassin du Rio Orinoco. D&#8217;autres lieux de capture
+          se trouvent le long du Rio Orinoco ou du Rio Inirida ainsi que de leurs affluents et dans
+          le cours supérieur du Rio Negro.</para>
+      </commentaires>
+    </origines>
+    <première-description>
+      <nom-du-descripteur>Pellegrin</nom-du-descripteur>
+      <année>1903</année>
+    </première-description>
+    <taille-cm>
+      <moy>18</moy>
+    </taille-cm>
+    <longévité-ans>
+      <max>10</max>
+    </longévité-ans>
+    <qualité-eau>
+      <température-C>
+        <min>27</min>
+        <max>30</max>
+      </température-C>
+      <ph>
+        <min>4.5</min>
+        <max>7</max>
+      </ph>
+      <dureté>
+        <moy>1</moy>
+      </dureté>
+    </qualité-eau>
+    <zone-de-vie>Surface et milieu</zone-de-vie>
+    <alimentation>
+      <para>Comme les spécimens disponibles dans le commerce sont sauvages, il faudra probablement
+        leur proposer des aliments vivants puis essayer de les habituer aux congelés et nourritures
+        sèches progressivement.</para>
+    </alimentation>
+    <description>
+      <para>Jacques Pellegrin décrivit cette espèce en 1903 comme Pterophyllum altum dans
+        «&#160;Description de Cichlidés nouveaux de la collection du Museum. Bulletin du Museum
+        nationale d&#8217;Histoire naturelle. Paris Tome IX:125&#160;». Certains auteurs estiment
+        que cette espèce devrait être considérée comme sous-espèce de Pterophyllum scalare, quoique
+        sa position soit maintenant bien établie et P. altum est donc une espèce à part entière à
+        côté de P. scalare et P. leopoldi, cette dernière espèce étant rarement rencontrée en
+        aquariophilie.</para>
+      <para>Leur voiles sont un peu plus longs que ceux des scalaires classiques. Semblables aux
+        autres «&#160;poissons-lunes&#160;», hormis cette incurvation au dessus du museau. La forme
+        très haute de son corps et les petites écailles différencient également ce poisson des
+        autres espèces de Pterophyllum.</para>
+      <para>Grâce à l&#8217;extrême développement de ses nageoires dorsales et anales, Pterophyllum
+        altum peut atteindre une hauteur de 40 cm. Le nom d&#8217;espèce «&#160;altum&#160;»
+        mentionne d&#8217;ailleurs cette caractéristique.</para>
+      <para>La couleur de fond est le brun argenté avec trois larges barres sombres bien
+        visibles&#160;: la première traverse l&#8217;&#339;il, les deux autres sur le corps et
+        reliant la nageoire anale à la dorsale. Entre ces bandes, et également sur le pédoncule
+        caudal, on devine de fines barres. Une barre noire est également présente dans la
+        caudale.</para>
+    </description>
+    <dimorphisme>
+      <para>Il n&#8217;y a pas de différence entre les mâles et les femelles (isomorphe).</para>
+    </dimorphisme>
+    <comportement>
+      <section>
+        <titre>Caractère</titre>
+        <para>Pterophyllum altum est aussi pacifique et peureux que les espèces de Symphysodon et se
+          cache volontiers dans la plantation et les racines.</para>
+      </section>
+      <section>
+        <titre>Sociabilité</titre>
+        <para>Il a besoin de vivre en groupe&#160;: comme une hiérarchie basée sur des rapports de
+          force s&#8217;établit entre les sujets, un minimum de 4-5 spécimens sera nécessaire pour
+          diluer l&#8217;agressivité du ou des dominant(s).</para>
+      </section>
+    </comportement>
+    <reproduction>
+      <para>Abstraction faite d&#8217;une mention signalant une ponte réussie chez un certain Joseph
+        Schwanka de Hambourg dans les années 1950, ce fut très calme durant les années suivantes quant
+        aux reproductions de ce poisson. La plupart des publications signalaient que la reproduction
+        en captivité n&#8217;avait encore jamais réussi. C&#8217;est à la fin de 1993 que parût un
+        article relatant la reproduction réussie de A. Siegrist «&#160;Dir Nub ist geknackt! Zucht
+        von Pterophyllum altum gelungen!&#160;» dans «&#160;Diskus Jahrbuch 1994&#160;» chez Bede
+        Verlag pp. 42-47. Quelques pontes de 800 à 1&#160;000 &#339;ufs y sont relatées. L&#8217;eau
+        dans laquelle ces poissons se sont reproduits avait un pH de 4,5 et une très faible
+        conductivité.</para>
+    </reproduction>
+  </poisson>
+</fiche>

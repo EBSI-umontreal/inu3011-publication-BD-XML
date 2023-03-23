@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="../xslt/stylage-poissons-metrique.xsl"?>
+<!DOCTYPE fiche SYSTEM "../DTD/fiche-poisson.dtd" >
+<fiche id="aborichthys_elongatus">
+  <métadonnées>
+    <date-dern-modif>2019-03-28</date-dern-modif>
+    <créateur>Yves Marcoux</créateur>
+  </métadonnées>
+  <poisson>
+    <noms>
+      <nom-scientifique>Aborichthys elongatus</nom-scientifique>
+    </noms>
+    <famille>Hilaridés</famille>
+    <origines>
+      <origine>Inde (Bengale occidental, Darjeeling)</origine>
+      <origine>Bangladesh</origine>
+    </origines>
+    <première-description>
+      <nom-du-descripteur>Hora</nom-du-descripteur>
+      <année>1921</année>
+    </première-description>
+    <taille-cm>
+      <mâle>
+        <moy>9</moy>
+      </mâle>
+      <femelle>
+        <min>12</min>
+        <max>15</max>
+      </femelle>
+    </taille-cm>
+    <longévité-ans>
+      <min>6</min>
+      <max>8</max>
+    </longévité-ans>
+    <qualité-eau>
+      <température-C>
+        <min>27</min>
+        <max>30</max>
+      </température-C>
+      <ph>
+        <min>6.5</min>
+        <max>7.5</max>
+      </ph>
+      <dureté>
+        <min>5</min>
+        <max>12</max>
+      </dureté>
+    </qualité-eau>
+    <zone-de-vie>Fond</zone-de-vie>
+    <alimentation>
+      <para>Comme les spécimens disponibles dans le commerce sont sauvages, il faudra probablement
+        leur proposer des aliments vivants puis essayer de les habituer aux congelés et nourritures
+        sèches progressivement.</para>
+    </alimentation>
+    <description>
+      <para>Longiforme, corps gris à doré, queue rouge (plus ou moins prononcé). Des bandes claires
+        apparaissent sur la fin du corps et sur la queue. Barbillons autours de la bouche.</para>
+    </description>
+    <dimorphisme>
+      <para>Les femelles ont un embonpoint plus prononcé que les mâles et ont plus de marques sur le
+        corps et moins sur la queue.</para>
+    </dimorphisme>
+    <comportement>
+      <para>Aborichthys elongatus étant originaire de torrents et rivières à fort courant,
+        l&#8217;aquarium doit reproduire ces conditions car ces poissons ont des exigences élevées
+        en oxygène. Donnez-lui beaucoup de cachettes sous des cailloux aplatis. Attention, cette
+        espèce peut être à la fois divertissante et frustrante. Ces loches sont des chercheuses
+        chevronnées et aiment fouiller partout pour se cacher sous le décor. Leurs fouilles peuvent
+        être très perturbatrices pour l&#8217;aspect esthétique d&#8217;un aquarium. Veillez à ce
+        que tous les décors soient solidement installés car il est tout à fait possible que ces
+        poissons déséquilibrent durant leurs fouilles une pile instable de roche et provoquer ainsi
+        un effondrement qui pourrait être désastreux.</para>
+      <para>Très vorace, Aborichthys elongatus entre en frénésie à chaque séance de nourrissage. Il
+        dévore alors tout ce qui ressemble un temps soit peu à de la nourriture. Peu difficile, il
+        accepte tout type de nourriture, et n&#8217;hésite pas à aller chercher des flocons en
+        surface.</para>
+      <para>Sociable, Aborichthys elongatus accepte sans souci la présence de congénères, parfois
+        dans le même terrier. Néanmoins, il arrive que des mâles se battent pour un territoire, mais
+        bien souvent, ils partagent à nouveau leur cachette dès le lendemain.</para>
+      <para>Aborichthys elongatus cohabite parfaitement avec les Gastromyzon, dont les
+        caractéristiques de maintenance sont très proches.</para>
+      <para>L&#8217;essentiel des autres habitants de l&#8217;aquarium est totalement ignoré. </para>
+      <para>Très divertissant, ces poissons sont faciles à maintenir si les conditions de vie sont
+        un minimum respectées.</para>
+    </comportement>
+    <reproduction>
+      <para>Selon Joseph Schwanka, le croisement avec l&#8217;<lien id="acanthurus_lineatus"/> est
+        monnaie courante dans les aquariums de Monaco. Il faudrait cependant plus de
+          <vol-litres>800</vol-litres> d&#8217;eau pour que l&#8217;opération réussisse.</para>
+    </reproduction>
+  </poisson>
+</fiche>

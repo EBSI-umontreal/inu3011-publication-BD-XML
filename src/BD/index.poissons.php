@@ -64,7 +64,7 @@
 	 </TABLE> 
 	 <P>Pour plus d'information sur la recherche en texte int&eacute;gral, voir
 		&lt;<A
-		HREF="http://lucene.apache.org/java/2_3_2/queryparsersyntax.html">http://lucene.apache.org/java/2_3_2/queryparsersyntax.html</A>&gt;.</P>
+		HREF="http://lucene.apache.org/core/2_9_4/queryparsersyntax.html">http://lucene.apache.org/core/2_9_4/queryparsersyntax.html</A>&gt;.</P>
 <HR>
 	 <H3>Recherche de documents entiers par filtre XPath</H3>
 <P>Expression XPath <EM>absolue</EM> à utiliser comme filtre:</P>
@@ -115,7 +115,7 @@ non vide) lorsque appliquée à ce document.</SMALL></P>
 <?PHP 	include "fonctions.php";
 	$xquery = lireFichier("xquery/_listeDocuments.xquery");
 	$xquery = str_replace("NOMBASEDONNEE", $nomBaseDeDonnees, $xquery);
-	echo afficherResultat(executerXquery($xquery), "brut");
+	afficherResultat(executerXquery($xquery), "brut");
 ?>
 <HR>
   </BODY>

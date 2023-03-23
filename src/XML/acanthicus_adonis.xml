@@ -1,0 +1,94 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type="text/xsl" href="../xslt/stylage-poissons-metrique.xsl"?>
+<!DOCTYPE fiche SYSTEM "../DTD/fiche-poisson.dtd" >
+<fiche id="acanthicus_adonis">
+  <métadonnées>
+    <date-dern-modif>2019-03-29</date-dern-modif>
+    <créateur>Yves Marcoux</créateur>
+  </métadonnées>
+  <poisson>
+    <noms>
+      <nom-scientifique>Acanthicus adonis</nom-scientifique>
+      <nom-commun langue="fr">Adonis Pleco</nom-commun>
+    </noms>
+    <famille>Loricariidés</famille>
+    <origines>
+      <origine>Amérique du Sud</origine>
+      <origine>Brésil (État de Pará)</origine>
+      <origine>Bassin de la rivière Tocantins jusqu&#8217;à Cometà (État de Pará)</origine>
+    </origines>
+    <première-description>
+      <nom-du-descripteur>Isbrücker &amp; Nijssen</nom-du-descripteur>
+      <année>1988</année>
+    </première-description>
+    <taille-cm>
+      <mâle>
+        <moy>100</moy>
+      </mâle>
+      <femelle>
+        <moy>96</moy>
+      </femelle>
+    </taille-cm>
+    <longévité-ans>
+      <min>30</min>
+    </longévité-ans>
+    <qualité-eau>
+      <température-C>
+        <min>20</min>
+        <max>30</max>
+      </température-C>
+      <ph>
+        <min>6</min>
+        <max>7.8</max>
+      </ph>
+      <dureté>
+        <min>5</min>
+        <max>12</max>
+      </dureté>
+    </qualité-eau>
+    <zone-de-vie>Inférieure</zone-de-vie>
+    <alimentation>
+      <section>
+        <titre>Petit déjeuner</titre>
+        <para>Des granules de couleur verte sont un impératif pour le petit déjeuner de cette espèce
+          très fine bouche.</para>
+      </section>
+      <section>
+        <titre>Dîner</titre>
+        <para>C&#8217;est au dîner que l&#8217;on mettra à profit ses talents de cuisinier. Le
+          canard à l&#8217;orange (paradoxalement, car il est rare que des poissons mangent des
+          oiseaux) est très prisé de cette espèce.</para>
+      </section>
+      <section>
+        <titre>Brunch du dimanche</titre>
+        <para>Il faut ici y aller d&#8217;œufs sous toutes les formes.</para>
+      </section>
+    </alimentation>
+    <description>
+      <para>Ne comettez surtout pas l&#8217;erreur de débutant de confondre l&#8217;Acanthicus
+        adonis avec le <lien id="poissonus_panus"/>.</para>
+    </description>
+    <dimorphisme>
+      <para>Présence d&#8217;épines plus longues et plus fournies chez le mâle. Femelle plus
+        terne.</para>
+    </dimorphisme>
+    <comportement>
+      <para>Très agressif avec ses congénères et d&#8217;autres «&#160;poissons-chats&#160;». mais
+        vit sans problèmes avec des cichlidaes. Compte tenu des exigences de filtration posées par
+        le comportement alimentaire de cette espèce, les petits poissons ne sont probablement pas
+        une bonne idée, mais aucun problème n&#8217;a été observé lorsque logés avec d&#8217;autres
+        poissons de moyenne à grande taille, comme le Pike cichlidae, l&#8217;Aequidens, le Brycon,
+        le Myleus, le Mylossoma, le Prochilodus etc.</para>
+      <para>Aime les eaux agitées.</para>
+      <para>À maintenir dans un bac très grand étant donné qu&#8217;adulte, il peut atteindre
+          <long-cm>100</long-cm>.</para>
+      <para>Sa maintenance devrait même être interdite en aquarium, les conditions optimales étant
+        très dures à satisfaire.</para>
+    </comportement>
+    <reproduction>
+      <para>Le biologiste Joachim von Sweelinck, de Hambourg, a documenté des cas de métamorphose
+        d&#8217;individus de cette espèce en <lien id="chromobotia_macracanthus"/> d&#8217;une
+        taille dépassant les <long-cm>230</long-cm>&#160;!</para>
+    </reproduction>
+  </poisson>
+</fiche>

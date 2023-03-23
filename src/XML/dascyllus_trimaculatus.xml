@@ -1,52 +1,66 @@
-<poisson>
-      <noms>
-            <nom-scientifique>Dascyllus trimaculatus</nom-scientifique>
-            <nom-commun langue="fr">demoiselle Ã  trois taches</nom-commun>
-            <nom-commun langue="en">Threespot dascyllus</nom-commun>
-      </noms>
-      <famille>PomacentridÃ©s</famille>
-      <origines>
-            <origine source="libre">Asie - OcÃ©an Indien</origine>
-            <commentaires>
-                  <para> De l'ocÃ©an Indien Ã  l'ouest de l'ocÃ©an Pacifique et de la mer Rouge Ã  l'Australie. </para>
-            </commentaires>
-      </origines>
-      <descripteur>
-            <nom-descripteur>RÃ¼ppell</nom-descripteur>
-            <premiÃ¨re-description>1829</premiÃ¨re-description>
-      </descripteur>
-      <taille>
-            <mÃ¢le>
-                  <moy>14.0</moy>
-            </mÃ¢le>
-            <femelle>
-                  <moy>14.0</moy>
-            </femelle>
-      </taille>
-      <longÃ©vitÃ©>
-            <moy>P8Y</moy>
-      </longÃ©vitÃ©>
-      <qualitÃ©-eau>
-            <tempÃ©rature>
-                  <min>23</min>
-                  <max>24</max>
-            </tempÃ©rature>
-            <ph>
-                  <min>7</min>
-                  <max>8</max>
-            </ph>
-      </qualitÃ©-eau>
-      <zone-vie>Milieu et infÃ©rieure</zone-vie>
-      <description>
-            <para> Ces poissons sont de couleur bleue pÃ¢le, avec une tache blanche sur chaque flanc, une tÃªte jaune or et des nageoires noires. </para>
-      </description>
-      <dimorphisme>
-            <para> Aucune diffÃ©rence. </para>
-      </dimorphisme>
-      <comportement>
-            <para> Les jeunes sont pacifiques et vivent en groupe, Ã  proximitÃ© d'une grande anÃ©mone de mer. Les adultes sont plus hergneux. </para>
-      </comportement>
-      <reproduction>
-            <para> La ponte a lieu auprÃ¨s d'une anÃ©mone, d'un corail ou d'une simple roche. Les larves sont nourries de rotifÃ¨res. </para>
-      </reproduction>
-</poisson>
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="../xslt/stylage-poissons-metrique.xsl"?>
+<!DOCTYPE fiche SYSTEM "../DTD/fiche-poisson.dtd" >
+<fiche image="oui" id="dascyllus_trimaculatus">
+  <métadonnées>
+    <date-dern-modif>2016-04-03</date-dern-modif>
+    <créateur>Marilou Bourque</créateur>
+    <créateur>Arnaud d&#8217;Alayer</créateur>
+  </métadonnées>
+  <poisson>
+    <noms>
+      <nom-scientifique>Dascyllus trimaculatus</nom-scientifique>
+      <nom-commun langue="fr">Demoiselle à trois taches</nom-commun>
+      <nom-commun langue="en">Threespot dascyllus</nom-commun>
+    </noms>
+    <famille>Pomacentridés</famille>
+    <origines>
+      <origine>Asie - Océan Indien</origine>
+      <commentaires>
+        <para>De l&#8217;océan Indien à l&#8217;ouest de l&#8217;océan Pacifique et de la mer Rouge
+          à l&#8217;Australie. </para>
+      </commentaires>
+    </origines>
+    <première-description>
+      <nom-du-descripteur>Rüppell</nom-du-descripteur>
+      <année>1829</année>
+    </première-description>
+    <taille-cm>
+      <mâle>
+        <moy>14.0</moy>
+      </mâle>
+      <femelle>
+        <moy>14.0</moy>
+      </femelle>
+    </taille-cm>
+    <longévité-ans>
+      <moy>8</moy>
+    </longévité-ans>
+    <qualité-eau>
+      <température-C>
+        <min>23</min>
+        <max>24</max>
+      </température-C>
+      <ph>
+        <min>7</min>
+        <max>8</max>
+      </ph>
+    </qualité-eau>
+    <zone-de-vie>Milieu et inférieure</zone-de-vie>
+    <description>
+      <para>Ces poissons sont de couleur bleue pâle, avec une tache blanche sur chaque flanc, une
+        tête jaune or et des nageoires noires. </para>
+    </description>
+    <dimorphisme>
+      <para>Aucune différence. </para>
+    </dimorphisme>
+    <comportement>
+      <para>Les jeunes sont pacifiques et vivent en groupe, à proximité d&#8217;une grande anémone
+        de mer. Les adultes sont plus hargneux. </para>
+    </comportement>
+    <reproduction>
+      <para>La ponte a lieu auprès d&#8217;une anémone, d&#8217;un corail ou d&#8217;une simple
+        roche. Les larves sont nourries de rotifères. </para>
+    </reproduction>
+  </poisson>
+</fiche>

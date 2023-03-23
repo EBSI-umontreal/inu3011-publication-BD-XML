@@ -1,52 +1,66 @@
-<poisson>
-      <noms>
-            <nom-scientifique>Abramites hypselonotus</nom-scientifique>
-            <nom-commun langue="fr">Abramites</nom-commun>
-            <nom-commun langue="fr">Bramites</nom-commun>
-            <nom-commun langue="en">High-backed headstander</nom-commun>
-            <nom-commun langue="en">Marbled headstander</nom-commun>
-      </noms>
-      <famille>Anostomidés</famille>
-      <origines>
-            <origine source="geoethno">Amérique - Amérique du sud - Pérou - Amazonas </origine>
-            <origine source="libre">Bassin de l'Orénoque </origine>
-            <origine source="libre">Bassin de l'Amazone </origine>
-      </origines>
-      <descripteur>
-            <nom-descripteur>Günther</nom-descripteur>
-            <première-description>1868</première-description>
-      </descripteur>
-      <taille>
-            <mâle>
-                  <moy>14.0</moy>
-            </mâle>
-            <femelle>
-                  <moy>14.0</moy>
-            </femelle>
-      </taille>
-      <qualité-eau>
-            <température>
-                  <min>23</min>
-                  <max>27</max>
-            </température>
-            <ph>
-                  <min>6.0</min>
-                  <max>7.5</max>
-            </ph>
-            <dureté>
-                  <min>4</min>
-                  <max>15</max>
-            </dureté>
-      </qualité-eau>
-      <zone-vie>Milieu et inférieure</zone-vie>
-      <alimentation>
-            <para>Il est herbivore. </para>
-            <para>Lui fournir régulièrement de la nourriture végétale pour éviter qu'il s'attaque aux plantes de l'aquarium. </para>
-      </alimentation>
-      <dimorphisme>
-            <para>Impossible à déterminer à l'oeil nu. </para>
-      </dimorphisme>
-      <comportement>
-            <para>Les jeunes s'adaptent bien à l'aquarium communautaire mais, en grandissant, ils deviennent intolérants vis-à-vis les poisons de leur propre espèce. </para>
-      </comportement>
-</poisson>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../xslt/stylage-poissons-metrique.xsl"?>
+<!DOCTYPE fiche SYSTEM "../DTD/fiche-poisson.dtd" >
+<fiche image="oui" id="abramites_hypselonotus">
+  <métadonnées>
+    <date-dern-modif>2016-03-30</date-dern-modif>
+    <créateur>Marilou Bourque</créateur>
+    <créateur>Arnaud d&#8217;Alayer</créateur>
+  </métadonnées>
+  <poisson>
+    <noms>
+      <nom-scientifique>Abramites hypselonotus</nom-scientifique>
+      <nom-commun langue="fr">Abramites</nom-commun>
+      <nom-commun langue="fr">Bramites</nom-commun>
+      <nom-commun langue="en">High-backed headstander</nom-commun>
+      <nom-commun langue="en">Marbled headstander</nom-commun>
+    </noms>
+    <famille>Anostomidés</famille>
+    <origines>
+      <origine>Amérique - Amérique du sud - Pérou - Amazonas </origine>
+      <origine>Bassin de l&#8217;Orénoque </origine>
+      <origine>Bassin de l&#8217;Amazone </origine>
+    </origines>
+    <première-description>
+      <nom-du-descripteur>Günther</nom-du-descripteur>
+      <année>1868</année>
+    </première-description>
+    <taille-cm>
+      <mâle>
+        <moy>14.0</moy>
+      </mâle>
+      <femelle>
+        <moy>14.0</moy>
+      </femelle>
+    </taille-cm>
+    <qualité-eau>
+      <température-C>
+        <min>23</min>
+        <max>27</max>
+      </température-C>
+      <ph>
+        <min>6.0</min>
+        <max>7.5</max>
+      </ph>
+      <dureté>
+        <min>4</min>
+        <max>15</max>
+      </dureté>
+    </qualité-eau>
+    <zone-de-vie>Milieu et inférieure</zone-de-vie>
+    <alimentation>
+      <para>Il est herbivore. </para>
+      <para>Lui fournir régulièrement de la nourriture végétale pour éviter qu&#8217;il ne
+        s&#8217;attaque aux plantes de l&#8217;aquarium. </para>
+      <para>À cause de son alimentation incompatible, cette espèce ne doit pas cohabiter avec le
+          <lien id="pterophyllum_altum"/>.</para>
+    </alimentation>
+    <dimorphisme>
+      <para>Impossible à déterminer à l&#8217;œil nu.</para>
+    </dimorphisme>
+    <comportement>
+      <para>Les jeunes s&#8217;adaptent bien à l&#8217;aquarium communautaire mais, en grandissant,
+        ils deviennent intolérants vis-à-vis des poissons de leur propre espèce. </para>
+    </comportement>
+  </poisson>
+</fiche>

@@ -1,6 +1,6 @@
 <?php
 //Auteur : Arnaud d'Alayer	Date : 2010-03-24
-// YMA 2010-04-05
+// YMA 2010-04-05, modif 2015-03-26
 /*
 	fichier : XPathDoc.php
 	Description :
@@ -21,36 +21,12 @@
 //Récupérer les paramètres HTTP
 	$XPathOrig = stripslashes($_GET['rechercheXPath']);
 
-// Traitement identique à celui de XPath.php:
-// quoteAwareStrRep fait un remplacement de chaîne de façon "attentive aux guillemets"
-// N.B.: Cela fonctionne avec la syntaxe XQuery, où les guillemets à l'intérieur des
-// chaînes sont simplement doublés (ou encore on utilise les entités &amp; ou &apos;)
-// Tous ces cas sont traités correctement par quoteAwareStrRep
-	$XPathOrig = quoteAwareStrRep(' ', '', $XPathOrig); // Remove all spaces (except within quotes)
-	$XPathOrig = quoteAwareStrRep('	', '', $XPathOrig); // Remove all tabs (except within quotes)
-// Un peu drastique, enlever les espaces et des tabs, mais au pire ça corrige des erreurs, ça ne peut pas en causer
-
-	$rechercheXPath = $XPathOrig;
-
-	$rechercheXPath = quoteAwareStrRep('(/', '($doc/', $rechercheXPath);
-	$rechercheXPath = quoteAwareStrRep('|/', '|$doc/', $rechercheXPath);
-	$rechercheXPath = quoteAwareStrRep('[/', '[$doc/', $rechercheXPath);
-	if (substr($rechercheXPath, 0, 1) == '/') $rechercheXPath = '$doc' . $rechercheXPath;
-
-//Vérifier qu'une expression XPath absolue a été fournie
-	if ($rechercheXPath == $XPathOrig)
-// Si rien n'a changé, ce n'est pas une expression XPath absolue
-		die("Veuillez sp&#233;cifier une expression XPath absolue");
-
-// À cause d'un bug de eXist, il faut aussi remplacer les * par *[position()] (croyez-le ou non!!!)
-// qui, en principe, est un synonyme exact
-//	$rechercheXPath = quoteAwareStrRep('*', '*[position()]', $rechercheXPath);
-// 2012-09-23: Après tests, ça ne semble plus nécessaire avec la nouvelle version (2.0)
+	$rechercheXPath = preprocessXPath($XPathOrig);
 
 // Lecture du fichier "xquery/_XPathDoc.xquery" et remplacer les chaînes NOMBASEDONNEE 
 // et RECHERCHEXPATH par les bonnes valeurs
 	$xquery = lireFichier("xquery/_XPathDoc.xquery");
-	$xquery = str_replace("NOMBASEDONNEE", $nomBaseDeDonnees, $xquery);
+//	$xquery = str_replace("NOMBASEDONNEE", $nomBaseDeDonnees, $xquery);
 	$xquery = str_replace("RECHERCHEXPATH", $rechercheXPath, $xquery);
 //echo $xquery;
 	//Inclure le fichier XPathDoc.inc.html personnalisant l'aspect du résultat

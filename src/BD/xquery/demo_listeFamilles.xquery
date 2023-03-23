@@ -1,5 +1,6 @@
 <ul> {
-    for $famille in fn:collection("/db/demo")//famille
+    for $famille in distinct-values(collection()//famille)
+    order by $famille
     return
         <li>
             {string($famille)}

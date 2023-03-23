@@ -1,0 +1,101 @@
+<?xml encoding="UTF-8"?>
+
+<!ENTITY % moyMinMaxComm "
+	(moy, min?, max?, commentaires?) |
+	(min, max?, commentaires?) |
+	(max, commentaires?)
+	">
+
+<!ENTITY % texte "(section+ | para+)">
+
+<!ELEMENT section (titre, para+)>
+
+<!ELEMENT titre (#PCDATA)>
+
+<!ELEMENT para (#PCDATA | lien | tempé-C | long-cm | vol-litres)*>
+
+<!ELEMENT lien EMPTY>
+<!ATTLIST lien id NMTOKEN #REQUIRED>
+
+<!ELEMENT tempé-C (#PCDATA)>
+
+<!ELEMENT long-cm (#PCDATA)>
+
+<!ELEMENT vol-litres (#PCDATA)>
+
+<!ELEMENT fiche (métadonnées, poisson)>
+<!ATTLIST fiche
+  id NMTOKEN #REQUIRED
+  image (oui | non) "non">
+
+<!ELEMENT métadonnées (date-dern-modif, créateur+)>
+
+<!ELEMENT poisson (noms, famille, origines, première-description?, taille-cm?, longévité-ans?,
+                   qualité-eau?, zone-de-vie?, alimentation?, description?,
+                   dimorphisme?, comportement?, reproduction?)>
+
+<!--
+Déclaration utilisée pour des tests:
+<!ELEMENT poisson (#PCDATA | noms | famille | origines | première-description | taille-cm | longévité-ans |
+                   qualité-eau | zone-de-vie | alimentation | description |
+                   dimorphisme | comportement | reproduction)*>
+-->
+
+<!ELEMENT date-dern-modif (#PCDATA)>
+
+<!ELEMENT créateur (#PCDATA)>
+
+<!ELEMENT noms (nom-scientifique, nom-commun*)>
+
+<!ELEMENT nom-scientifique (#PCDATA)>
+
+<!ELEMENT nom-commun (#PCDATA)>
+<!ATTLIST nom-commun langue (fr | en) #REQUIRED>
+
+<!ELEMENT famille (#PCDATA)>
+
+<!ELEMENT origines (origine+, commentaires?)>
+
+<!ELEMENT première-description (nom-du-descripteur, année)>
+
+<!ELEMENT nom-du-descripteur (#PCDATA)>
+
+<!ELEMENT année (#PCDATA)>
+
+<!ELEMENT taille-cm ((mâle, femelle)|(%moyMinMaxComm;))>
+
+<!ELEMENT longévité-ans (%moyMinMaxComm;)>
+
+<!ELEMENT qualité-eau (température-C, ph?, dureté?)>
+
+<!ELEMENT température-C (%moyMinMaxComm;)>
+
+<!ELEMENT ph (%moyMinMaxComm;)>
+
+<!ELEMENT dureté (%moyMinMaxComm;)>
+
+<!ELEMENT zone-de-vie (#PCDATA)>
+
+<!ELEMENT alimentation (%texte;)+>
+
+<!ELEMENT description (%texte;)>
+
+<!ELEMENT dimorphisme (%texte;)>
+
+<!ELEMENT comportement (%texte;)>
+
+<!ELEMENT reproduction (%texte;)>
+
+<!ELEMENT origine (#PCDATA)>
+
+<!ELEMENT mâle (%moyMinMaxComm;)>
+
+<!ELEMENT femelle (%moyMinMaxComm;)>
+
+<!ELEMENT commentaires (%texte;)>
+
+<!ELEMENT moy (#PCDATA)>
+
+<!ELEMENT min (#PCDATA)>
+
+<!ELEMENT max (#PCDATA)>

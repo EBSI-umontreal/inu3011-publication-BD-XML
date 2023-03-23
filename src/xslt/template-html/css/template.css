@@ -38,7 +38,23 @@
     color: #000000;
   }
   
+  /* Image du poisson */
+  #image img{
+    float :left;
+    padding : 0%;    
+    width : 40%;
+    max-height : 40%;
+  }
+  
   /* stylage spécifique pour certains blocs */
+  #nom, #info-eau{
+    float :right;
+    width : 38%;
+  }
+  #info-desc {
+    float :left;
+    width : 38%;
+  }
   #info-desc, #info-eau, #infolong{
     margin-top : 0;
   }
@@ -57,6 +73,8 @@
    ==============================*/
   /* === DÉGRADÉ DE COULEURS EN CSS ===*/
  body {
+    /*Image contenant un dégradé sur 1px de largeur (source : http://www.discoverthecoast.com/)*/
+    background : transparent url(../images/bg.jpg) repeat-x;
     /*Ceci est la couleur du background à la fin du repeat pour donner un effet de continuité*/
     background-color : #BBE0FA;
  }

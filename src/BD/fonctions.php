@@ -1,30 +1,26 @@
 <?php
 //Auteur : Arnaud d'Alayer	Date : 2010-03-29
-//Modif: YMA 2011-04-07
+//Dernières modifications : Yves Marcoux 2016-01-06
 
 	include "configuration.php";
 
-// Section déplacée de "configuration.php" pour simplifier
-// ce dernier (YMA 2010-04-01):
 	$serveurAdresse = "localhost";
-	$serveurport = "8088";
-	$serveurProtocole = "http";
-	$serveurChemin = "/xmlrpc";
-	//Afficher la requête XQuery
-	//Afficher la journalisation de exist-phpapi
-	$debug = false;
-// Fin de la section déplacée de "configuration.php"
+	$serveurPort = 1984;
 
-	include "bin/exist-phpapi/exist_phpapi.inc";
-	
-	/*lireFichier()
+//	if (!$afficherReqXQuery) $afficherReqXQuery = false;
+
+	$appURI = appURI();
+
+	include "BaseXClient.php";
+
+/*lireFichier()
 	Description : fonction permettant de lire un fichier et de retourner son contenu sous forme d'une chaine de caractères (string)
 	Source : http://snippetdb.com/php/read-file-to-a-string
 	Paramètre(s) :
 	- $filename (string - obligatoire) : adresse du fichier à ouvrir
 	Retour :
 	- (String) : contenu du fichier
-	*/
+*/
 	function lireFichier($filename){
 		$output = "";
 		
@@ -32,52 +28,50 @@
 			$file = fopen($filename, "r");
 			while(!feof($file)){
 				//read file line by line into variable
-			  $output = $output . fgets($file, 4096);
+			  $output .= fgets($file, 4096);
 			}
 			fclose ($file);
 		}
 		return $output;
 	}
-	
-	
+
 	/*executerXquery()
 	Description : fonction permettant d'exécuter une requête Xquery envoyée en paramètre (string)
 	Paramètre(s) :
-	- $xquery (string - obligatoire) : requête XQuery à exécuter dans la base de données configurée dans configuration.php
-	- $nePasMasquer (booléen - facultatif) : permet de désactiver l'affichage de l'entête même si l'affichage est activé dans configuration.php (utile pour les sorties XML)
+	- $xquery (string - obligatoire) : requête XQuery à exécuter dans la base de données configurée 
+	dans configuration.php
+	- $nePasMasquer (booléen - facultatif) : permet de désactiver l'affichage de l'entête même si 
+	l'affichage est activé dans configuration.php (utile pour les sorties XML)
 	Retour :
-	- (string) : Chaine de caractères contenant le résultat de la requête XQuery
+	- (string) : Chaîne de caractères contenant le résultat de la requête XQuery
 	*/
-	function executerXquery($xquery, $nePasMasquerEnTete = true){
-		global $serveurChemin; global $serveurAdresse; global $serveurport; global $utilisateurNom; global $utilisateurMotDePasse; global $debug; global $afficherEnTeteXQuery;
-		
-		$db = new eXist($serveurChemin, $serveurAdresse, $serveurport);
-		$db->setCredentials ($utilisateurNom, $utilisateurMotDePasse);
-		$db->setDebug($debug);
-		
-		if ($afficherEnTeteXQuery and $nePasMasquerEnTete) {
-			echo utf8_encode("<p><strong>Requête XQuery : <br/>" . str_replace("\r", "<br />", htmlspecialchars($xquery)) . "</strong></p>");
-		}
+	function executerXquery($xquery, $nePasMasquerReq = true){
+		global $serveurAdresse; global $serveurPort; global $utilisateurNom; 
+		global $utilisateurMotDePasse; global $afficherReqXQuery; global $nomBaseDeDonnees;
+		try {
+			$session = new Session($serveurAdresse, $serveurPort, $utilisateurNom, $utilisateurMotDePasse);
+			$session->execute("OPEN ". $nomBaseDeDonnees);
 
-// YMA 2011-04-07 Ce qui suit, pour éviter de traîner le résultat d'une ancienne requête
-// dans le cas où la requête courante est en erreur...
-		$result = $db->executeQuery("'Erreur, d&#233;sol&#233;.'");
-		$result = $db->executeQuery($xquery);
-		//obtenir le résultat de la requête sous forme d'une Chaine de caractères
-		$num = 0;
-		$sortie = "";
-		while ( $db->retrieve($result, $num)!=""){
-			$sortie = $sortie . $db->retrieve($result, $num) . "\n";
-			$num++;
-		}
-		/*echo "<hr/>" . $db->retrieve($result, 0);
-		echo "<hr/>" . $db->retrieve($result, 1);*/
-		
-		return $sortie;
+			if ($afficherReqXQuery and $nePasMasquerReq)
+				echo ("<p><strong>Requête XQuery : <br/>" . str_replace("\r", "<br />", 
+				htmlspecialchars($xquery)) . "</strong></p>");
 
+			$query = $session->query($xquery);
+			// get results
+			$sortie = $query->execute()."\n";
+			// close query instance
+			$query->close();
+			// close session
+			$session->close();
+
+			return $sortie;
+
+		} catch (Exception $e) {
+		  // print exception
+		  echo $e->getMessage();
+		}
 	}
-	
-	
+
 	/*executerFichierXquery()
 	Description : fonction permettant d'exécuter une requête Xquery stockée dans un fichier
 	Paramètre(s) :
@@ -85,12 +79,11 @@
 	Retour :
 	- (string) : Chaine de caractères contenant le résultat de la requête XQuery
 	*/
-	function executerFichierXquery($filename, $nePasMasquerEnTete = true){
+	function executerFichierXquery($filename, $nePasMasquerReq = true){
 		$xquery = lireFichier("xquery/" . $filename);
-		return executerXquery($xquery, $nePasMasquerEnTete);
+		return executerXquery($xquery, $nePasMasquerReq);
 	}
-	
-	
+
 	/*afficherResultat()
 	Description : permet d'afficher un résultat de requête XQuery selon un format déterminé
 	Paramètre(s) :
@@ -98,7 +91,8 @@
 	- $format
 		- xml : le serveur ajoute une entête XML suivi du contenu du document XML
 		- pre : le serveur retourne le contenu du document XML sous forme HTML dans un conteneur <pre>
-		- brut : le serveur retourne le contenu du résultat de la requête XQuery directement (utile si la requête XQuery retourne du code HTML)
+		- brut : le serveur retourne le contenu du résultat de la requête XQuery directement 
+		(utile si la requête XQuery retourne du code HTML)
 	Retour : NA
 	*/
 	function afficherResultat($result, $format, $surligne=""){
@@ -109,7 +103,8 @@
 				echo $result;
 				break;
 			case "brut" :
-				//ce cas est inutile (car revient à afficher directement le résultat de executerXquery()), mais pour des raisons pédagogique nous l'avons ajouté
+// ce cas est inutile (car revient à afficher directement le résultat de executerXquery()),
+// mais pour des raisons pédagogiques, nous l'avons ajouté
 				echo $result;
 				break;
 			case "pre" :
@@ -121,24 +116,27 @@
 				echo ("Format d'affichage inconnu: ".$format);
 		}
 	}
-	
-	
+
 	// Source : http://www.tonymarston.net/php-mysql/xsl.html
 	function transformationXSLT($docXML, $feuilleXSLT) {
+		global $appURI;
+		global $nomBaseDeDonnees;
 		$sortie = "";
-		
+
 		$docATransformer = new DOMDocument();
 		$docATransformer->loadXML($docXML);
-		
+
 		$xp = new XsltProcessor();
 		$xsl = new DOMDocument();
-		if (file_exists("xslt/" . $feuilleXSLT)){
-			$xsl->load("xslt/" . $feuilleXSLT);
+		if (file_exists("../xslt/" . $feuilleXSLT)){
+			$xsl->load("../xslt/" . $feuilleXSLT);
 			$xp->importStylesheet($xsl);
+			$xp->setParameter("", "appURI", $appURI);
+			$xp->setParameter("", "nomBD", $nomBaseDeDonnees);
 			$sortie = $xp->transformToXML($docATransformer);
 		}
 		else {
-			echo ("Feuille XSLT inconnue: ".$feuilleXSLT);
+			echo ("Feuille XSLT inconnue: " . $feuilleXSLT);
 		}
 		return $sortie;
 	}
@@ -162,6 +160,7 @@ function quoteAwareStrRep($rech, $remp, $str) {
 // We can safely do the replace until the first ' or "
 		$res = $res . str_replace($rech, $remp, substr($str, 0, $posDelim));
 		$str = substr($str, $posDelim);
+// Remove segment just processed
 // If a delimiter was found, we must copy without change until and including the matching delimiter
 		if (strlen($str) > 0) {
 			$posDelim = num_strpos($str, substr($str, 0, 1), 1);
@@ -173,5 +172,102 @@ which will exhaust $str */
 		};
 	};
 	return $res;
+};
+
+function quoteAwareNormalizeSpace($str) {
+// Removes leading spaces and multiple spaces (will leave one trailing space)
+// of each segment not between quotes in $str.
+// YMA 2015-03-26
+	$res = '';
+	while (strlen($str) > 0) {
+		$posDelim = min(num_strpos($str, '\'', 0), num_strpos($str, '"', 0));
+// We can safely do the multiple space elimination until the first ' or "
+		$curSeg = substr($str, 0, $posDelim);
+// Current segment to process
+		$lastChar = ' ';
+// Do not keep any initial space
+		while (strlen($curSeg) > 0) {
+//Process current segment
+			$curChar = substr($curSeg, 0, 1);
+			if (($curChar . $lastChar) !== '  ') $res = $res . $curChar;
+// If not both spaces
+			$lastChar = $curChar;
+			$curSeg = substr($curSeg, 1);
+// Shave off the char just processed
+		};
+		$str = substr($str, $posDelim);
+// Remove segment just processed
+// If a delimiter was found, we must copy without change until and including the matching delimiter
+		if (strlen($str) > 0) {
+			$posDelim = num_strpos($str, substr($str, 0, 1), 1);
+			$res = $res . substr($str, 0, $posDelim+1);
+/* Note the "+1" is to include the matching delimiter; if there is
+none, $posDelim+1 will be one more than the remaining $str length,
+which will exhaust $str */
+			$str = substr($str, $posDelim+1);
+		};
+	};
+	return $res;
+};
+
+function preprocessXPath($XPathOrig) {
+// YMA 2015-03-26
+// Effectue le prétraitement nécessaire à une expression XPath absolue formulée
+// relativement au noeud racine d'un document pour qu'elle
+// fonctionne dans le contexte d'une BD Exist à plusieurs documents, en supposant
+// que la variable "$doc" est la variable d'itération sur les documents
+// (essentiellement, les / initiaux sont remplacés par des "$doc/").
+// Vérifie que l'expression XPath fournie était absolue et avorte sinon.
+
+	$XPathOrig = quoteAwareStrRep('\t', ' ', $XPathOrig);
+
+// Replace all tabs by spaces (except within quotes)
+// On ne peut pas juste enlever toutes les espaces, parce qu'une expression XPath
+// peut contenir les opérateurs "and" et "or". Il faut donc y aller plus mollo.
+
+	$XPathOrig = quoteAwareNormalizeSpace($XPathOrig);
+
+// À cause d'un bug de eXist, il faut remplacer les * par *[position()] (croyez-le ou non!!!)
+// qui, en principe, est un synonyme exact:
+//		$rechercheXPath = quoteAwareStrRep('*', '*[position()]', $rechercheXPath);
+// 2012-09-23: Après tests, ça ne semble plus nécessaire avec la nouvelle version d'eXist (2.0)
+// 2016-01-06 YMA: ... et bien sûr, ce n'est plus nécessaire avec BaseX (joie...)!
+
+	$rechercheXPath = $XPathOrig;
+
+	$rechercheXPath = quoteAwareStrRep('(/', '($doc/', $rechercheXPath);
+	$rechercheXPath = quoteAwareStrRep('( /', '( $doc/', $rechercheXPath);
+	$rechercheXPath = quoteAwareStrRep('|/', '|$doc/', $rechercheXPath);
+	$rechercheXPath = quoteAwareStrRep('| /', '| $doc/', $rechercheXPath);
+	$rechercheXPath = quoteAwareStrRep('[/', '[$doc/', $rechercheXPath);
+	$rechercheXPath = quoteAwareStrRep('[ /', '[ $doc/', $rechercheXPath);
+	if (substr($rechercheXPath, 0, 1) == '/') $rechercheXPath = '$doc' . $rechercheXPath;
+
+//Vérifier qu'une expression XPath absolue avait été fournie
+	if ($rechercheXPath == $XPathOrig)
+// Si rien n'a changé, ce n'est pas une expression XPath absolue
+		echo "Veuillez sp&#233;cifier une expression XPath absolue";
+	return $rechercheXPath;
+};
+
+function curPageURL() {
+// http://webcheatsheet.com/php/get_current_page_url.php
+ $pageURL = 'http';
+ if ($_SERVER["HTTPS"] == "on") $pageURL .= "s";
+ $pageURL .= "://";
+ if ($_SERVER["SERVER_PORT"] != "80") {
+  $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+ } else {
+  $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+ }
+ return $pageURL;
+};
+
+function appURI() {
+	$URI = curPageURL();
+	$pos = strpos($URI, "?");
+	if ($pos != false) { $URI = substr($URI, 0, $pos); }
+	$URI = substr($URI, 0, strrpos($URI, "/") + 1);
+	return $URI;
 };
 ?>

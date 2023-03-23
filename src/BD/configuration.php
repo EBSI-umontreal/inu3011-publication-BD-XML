@@ -1,26 +1,33 @@
 <?php
-// INU3011: Effectuez les trois modifications indiquées ci-dessous:
+// INU3011: Effectuez ci-dessous les trois modifications indiquées:
 
 // Modification 1:
 // Dans la ligne ci-après, remplacer demo par votre nom d'utilisateur
-// Par exemple: $nomBaseDeDonnees = "p1234567";
+// Par exemple: $utilisateurNom = "INU3011Eq07";
 
-$nomBaseDeDonnees = "demo";
+$utilisateurNom = "admin";
 
 // Modification 2:
-// Dans la ligne ci-après, remplacer guest par votre nom d'utilisateur
-// Par exemple: $utilisateurNom = "p1234567";
+// Dans la ligne ci-après, remplacer demo par votre mot de passe
+// Par exemple: $utilisateurMotDePasse = "H3HC8K9D";
 
-$utilisateurNom = "guest";
+$utilisateurMotDePasse = "admin";
 
 // Modification 3:
-// Dans la ligne ci-après, remplacer guest par votre mot de passe
-// Par exemple: $utilisateurMotDePasse = "H3JC8KD";
+// Dans la ligne ci-après, remplacer poissons par le nom de votre
+// base de données
+// Par exemple: $nomBaseDeDonnees = "INU3011Eq07";
 
-$utilisateurMotDePasse = "guest";
+$nomBaseDeDonnees = "poissons";
 
-// Ne pas toucher à la ligne suivante, sauf sur demande
-$afficherEnTeteXQuery = false;
-// Auteur : Arnaud d'Alayer
-// Date : 2010-03-24
+// Modification 4:
+// Dans la ligne ci-après, remplacer stylage-poissons-metrique.xsl par
+// le nom de fichier de votre feuille de style
+// Par exemple: $feuilleXSLT = "monStyle.xsl";
+
+$feuilleXSLT = "stylage-poissons-metrique.xsl";
+
+// Auteurs : Arnaud d'Alayer, Yves Marcoux
+// Date dernière modification : 2016-01-06
+// $afficherReqXQuery = true;
 ?>

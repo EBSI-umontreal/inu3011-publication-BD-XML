@@ -1,45 +1,62 @@
-<poisson>
-      <noms>
-            <nom-scientifique>Poissonus panus</nom-scientifique>
-            <nom-commun langue="fr">Poisson panÃ©</nom-commun>
-      </noms>
-      <famille>Joke</famille>
-      <origines>
-            <origine source="libre">Rayon surgelÃ©s</origine>
-            <commentaires>
-                  <para>Existe plusieurs variÃ©tÃ©s : panure croustillante, au citron, Ã  lâ€™estragon.</para>
-            </commentaires>
-      </origines>
-      <taille>
-            <min>4</min>
-            <max>15</max>
-            <commentaires>
-                  <para>La taille peut varier selon s'il est en en forme de filet ou de bÃ¢tonnet.</para>
-            </commentaires>
-      </taille>
-      <longÃ©vitÃ©>
-            <max>P1Y</max>
-            <commentaires>
-                  <para>Conserver au maximun 1 an dans le congÃ©lateur pour prÃ©server le goÃ»t.</para>
-                  <para>Sa chance de survivre diminue fortement dÃ©s qu'il se trouve dans une assiette.</para>
-            </commentaires>
-      </longÃ©vitÃ©>
-      <qualitÃ©-eau>
-            <tempÃ©rature>
-                  <min>300</min>
-                  <max>350</max>
-                  <commentaires>
-                        <para>Faire cuire au four pendant 15 Ã  20 minutes.</para>
-                  </commentaires>
-            </tempÃ©rature>
-      </qualitÃ©-eau>
-      <alimentation>
-            <para>Poisson trÃ¨s Ã©conome, il n'est pas nÃ©cessaire de le nourrir.</para>
-      </alimentation>
-      <description>
-            <para>GÃ©nÃ©ralement de couleur jaune, il se prÃ©sente sous forme de filet ou de bÃ¢tonnet.</para>
-      </description>
-      <comportement>
-            <para>Poisson trÃ¨s calme dans sa boite. Attention, il peut vous bruler si vous tenter de le manger quand il vient juste de sortir du four.</para>
-      </comportement>
-</poisson>
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="../xslt/stylage-poissons-metrique.xsl"?>
+<!DOCTYPE fiche SYSTEM "../DTD/fiche-poisson.dtd" >
+<fiche image="oui" id="poissonus_panus">
+  <?blague Poisson d'avril, on s'en permet: & < <!-- ?>
+  <métadonnées>
+    <!-- Si je peux commenter la blague... elle est plutôt plate...!
+    Et ici aussi, on s'en permet: & < <! -->
+    <date-dern-modif>2016-03-28</date-dern-modif>
+    <créateur>Marilou Bourque</créateur>
+    <créateur>Arnaud d&#8217;Alayer</créateur>
+    <créateur>Yves Marcoux</créateur>
+  </métadonnées>
+  <poisson>
+    <noms>
+      <nom-scientifique>Poissonus panus</nom-scientifique>
+      <nom-commun langue="fr">Poisson pané</nom-commun>
+    </noms>
+    <famille>Hilaridés</famille>
+    <origines>
+      <origine>Rayon des surgelés</origine>
+      <commentaires>
+        <para>Existe en plusieurs variétés&#160;: panure croustillante, au citron, à
+          l&#8217;estragon.</para>
+      </commentaires>
+    </origines>
+    <taille-cm>
+      <min>4</min>
+      <max>15</max>
+      <commentaires>
+        <para>La taille peut varier selon qu&#8217;il est en forme de filet ou de bâtonnet.</para>
+      </commentaires>
+    </taille-cm>
+    <longévité-ans>
+      <max>1</max>
+      <commentaires>
+        <para>Conserver au maximum 1 an dans le congélateur pour conserver le goût.</para>
+        <para>Sa chance de survivre diminue fortement dès qu&#8217;il se trouve dans une
+          assiette.</para>
+      </commentaires>
+    </longévité-ans>
+    <qualité-eau>
+      <température-C>
+        <min>300</min>
+        <max>350</max>
+        <commentaires>
+          <para>Faire cuire au four pendant 15 à 20 minutes.</para>
+        </commentaires>
+      </température-C>
+    </qualité-eau>
+    <alimentation>
+      <para>Poisson très économe, il n&#8217;est pas nécessaire de le nourrir.</para>
+    </alimentation>
+    <description>
+      <para>Généralement de couleur jaune, il se présente sous forme de filet ou de bâtonnet.</para>
+    </description>
+    <comportement>
+      <para>Poisson très calme dans sa boîte. Attention, il peut vous brûler si vous tentez de le
+        manger quand il vient juste de sortir du four.</para>
+    </comportement>
+  </poisson>
+</fiche>
