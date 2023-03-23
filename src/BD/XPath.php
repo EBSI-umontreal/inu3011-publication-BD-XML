@@ -21,7 +21,7 @@ Paramètres de cette page :
 	$rechercheXPath = preprocessXPath($XPathOrig);
 
 	$xquery = lireFichier("xquery/_XPath.xquery");
-//	$xquery = str_replace("NOMBASEDONNEE", $nomBaseDeDonnees, $xquery);
+	$xquery = str_replace("NOMBASEDONNEE", $nomBaseDeDonnees, $xquery);
 	$xquery = str_replace("RECHERCHEXPATH", $rechercheXPath, $xquery);
 	
 	//Inclure le fichier XPath.inc.html personnalisant l'aspect du résultat

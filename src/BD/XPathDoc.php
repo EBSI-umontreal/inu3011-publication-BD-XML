@@ -26,7 +26,7 @@
 // Lecture du fichier "xquery/_XPathDoc.xquery" et remplacer les chaînes NOMBASEDONNEE 
 // et RECHERCHEXPATH par les bonnes valeurs
 	$xquery = lireFichier("xquery/_XPathDoc.xquery");
-//	$xquery = str_replace("NOMBASEDONNEE", $nomBaseDeDonnees, $xquery);
+	$xquery = str_replace("NOMBASEDONNEE", $nomBaseDeDonnees, $xquery);
 	$xquery = str_replace("RECHERCHEXPATH", $rechercheXPath, $xquery);
 //echo $xquery;
 	//Inclure le fichier XPathDoc.inc.html personnalisant l'aspect du résultat

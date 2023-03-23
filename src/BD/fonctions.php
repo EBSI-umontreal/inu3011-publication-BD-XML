@@ -1,6 +1,7 @@
 <?php
 //Auteur : Arnaud d'Alayer	Date : 2010-03-29
-//Dernières modifications : Yves Marcoux 2021-04-17
+//Dernières modifications : Arnaud d'Alayer 2023-03-23
+//                          Yves Marcoux 2021-04-17
 
   include ((file_exists("YMAconfig.php")) ? "YMAconfig.php" : "configuration.php");
   $codeUdeM = $_SERVER["REQUEST_URI"];
@@ -13,7 +14,10 @@
 
 	$appURI = appURI();
 
-	include "BaseXClient.php";
+	//include "BaseXClient.php";
+	include_once 'BaseXClient/load.php';
+	use BaseXClient\BaseXException;
+	use BaseXClient\Session;
 
 /*lireFichier()
 	Description : fonction permettant de lire un fichier et de retourner son contenu sous forme d'une chaine de caractères (string)
@@ -82,7 +86,10 @@
 	- (string) : Chaine de caractères contenant le résultat de la requête XQuery
 	*/
 	function executerFichierXquery($filename, $nePasMasquerReq = true){
+		global $nomBaseDeDonnees;
+		
 		$xquery = lireFichier("xquery/" . $filename);
+		$xquery = str_replace("NOMBASEDONNEE", $nomBaseDeDonnees, $xquery);
 		return executerXquery($xquery, $nePasMasquerReq);
 	}
 
