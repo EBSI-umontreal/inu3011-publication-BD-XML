@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet
-  version="1.0"
-  xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-
-  <!-- L'instruction <xsl:output /> qui suit précise la forme de l'extrant désiré :
-    - valide XHTML 1.0 Strict avec déclaration XML
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<!-- L’instruction <xsl:output /> qui suit précise la forme de l’extrant désiré :
+    - HTML5
     - indenté
     - encodé en UTF-8 -->
-  <xsl:output
-    method="xml" 
-    version="1.0" 
-    indent="yes" 
-    encoding="UTF-8" 
-    omit-xml-declaration="no" 
-    doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"
-    doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" />
+  <xsl:output method="html" version="5" indent="yes" encoding="UTF-8" 
+    omit-xml-declaration="yes" />
 
+  <xsl:template match="/"><xsl:apply-templates /></xsl:template>
+
+<!-- Vous placez vos gabarits ci-dessous, en commençant par celui qui "match" votre
+élément de plus haut niveau (EPHN), dont le contenu formera l’infrastructure
+HTML principale de vos extrants HTML.
+
+LE GABARIT CI-DESSOUS N’EST QU’UN EXEMPLE ET DOIT ÊTRE MODIFIÉ.
+Notamment et entre autres, "EPHN" doit être remplacé par le nom de l’élément de plus haut
+niveau de VOTRE modèle. Vous devrez ensuite ajouter les autres gabarits requis, selon la
+conception de votre transformation.
+-->
   <xsl:param name="nomBD" select="'BD'" />
   <xsl:param name="appURI" select="'sysFich'" />
 
@@ -24,12 +25,8 @@
   <!--  <xsl:param name="système" select="'anglais'" />-->
 
   <!-- Importation du fichier contenant les popups d'informations -->
-
-<!--	YMA 2012-02-16 Même si le namespace par défaut est celui de XHTML, on doit
-		l'utiliser explicitement dans l'instruction ci-dessous, sinon, rien
-		n'est repêché. -->
-   <xsl:variable xmlns:html="http://www.w3.org/1999/xhtml" name="popups"
-	select="document('popup.xml')//html:div" />
+  <xsl:variable name="popups"
+    select="document('popup.xml')//div" />
 
   <!--
     =====
@@ -48,8 +45,8 @@
         <xsl:for-each select="métadonnées/créateur">
           <meta name="DC.Creator" content="{.}" />
         </xsl:for-each>        
-        <link rel="stylesheet" type="text/css" href="../fichiers-aux-XHTML/css/template.css"/>
-        <script type="text/javascript" src="../fichiers-aux-XHTML/script/template.js" charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="../fichiers-aux-HTML/css/template.css"/>
+        <script type="text/javascript" src="../fichiers-aux-HTML/script/template.js" charset="UTF-8">
 		&#160; </script>
       </head>
       <body>
@@ -251,7 +248,7 @@
   <xsl:template match="acidité-pH">
     <xsl:call-template name="moyMinMaxComm">
       <xsl:with-param name="intitulé">Acidité&#160;:
-        <img src="../fichiers-aux-XHTML/images/question.gif" alt="Plus d’information sur le pH" id="ancre-ph"/>
+        <img src="../fichiers-aux-HTML/images/question.gif" alt="Plus d’information sur le pH" id="ancre-ph"/>
       </xsl:with-param>
       <xsl:with-param name="unité">pH</xsl:with-param>
     </xsl:call-template>
@@ -261,7 +258,7 @@
   <xsl:template match="dureté-dGH">
     <xsl:call-template name="moyMinMaxComm">
       <xsl:with-param name="intitulé">Dureté&#160;:
-        <img src="../fichiers-aux-XHTML/images/question.gif" alt="Plus d’information sur la dureté" id="ancre-gh"/>
+        <img src="../fichiers-aux-HTML/images/question.gif" alt="Plus d’information sur la dureté" id="ancre-gh"/>
       </xsl:with-param>
       <xsl:with-param name="unité">dGH</xsl:with-param>
     </xsl:call-template>
@@ -406,7 +403,7 @@
   </xsl:template>
 
   <xsl:template match="lien">
-    <a href="{@id}.xhtml"
+    <a href="{@id}.html"
 		><xsl:value-of select=
 			"."
 			/></a>
@@ -437,4 +434,6 @@ simple système de fichiers. Donc, il faut utiliser une URL absolue.
 2017-04-10 YMA
 Simplifié le traitement des liens pour démo en classe: le contenu du <lien> est
 maintenant le texte cliquable.
+2021-04-17 YMA
+Modifié pour produire du HTML5.
 -->

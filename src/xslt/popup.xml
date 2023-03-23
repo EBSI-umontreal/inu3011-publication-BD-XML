@@ -6,8 +6,11 @@ fait)...
 
 IE lui, semble bien s'en tirer.
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> -->
-<html xmlns="http://www.w3.org/1999/xhtml" lang="fr-ca" xml:lang="fr-ca">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+2021-04-17 YMA retiré déclaration du namespace XHTML.
+-->
+<html lang="fr-ca" xml:lang="fr-ca">
   <head>
     <title>Popup des fiches</title>
   </head>

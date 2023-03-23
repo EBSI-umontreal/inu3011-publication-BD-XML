@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="../XSLT/XHTML.xsl"?>
+<?xml-stylesheet type="text/xsl" href="../XSLT/HTML.xsl"?>
 <!DOCTYPE fiche-poisson SYSTEM "../DTD/fiche-poisson.dtd" >
 <fiche-poisson image="oui" id="chromobotia_macracanthus">
   <métadonnées>

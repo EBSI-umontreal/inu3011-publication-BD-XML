@@ -1,13 +1,14 @@
 <?php
 //Auteur : Arnaud d'Alayer	Date : 2010-03-29
-//Dernières modifications : Yves Marcoux 2016-04-07
+//Dernières modifications : Yves Marcoux 2021-04-17
 
-	include ((file_exists("YMAconfig.php")) ? "YMAconfig.php" : "configuration.php");
+  include ((file_exists("YMAconfig.php")) ? "YMAconfig.php" : "configuration.php");
+  $codeUdeM = $_SERVER["REQUEST_URI"];
+  $codeUdeM = substr($codeUdeM, 1, strpos($codeUdeM, "/", 1)-1);
+  $serveurAdresse = "localhost";
+  $serveurPort = 1984;
 
-	$serveurAdresse = "localhost";
-	$serveurPort = 1984;
-
-	if (!$feuilleXSLT) $feuilleXSLT = "XHTML-C.xsl";
+  if (!$feuilleXSLT) $feuilleXSLT = "HTML-C.xsl";
 //	if (!$afficherReqXQuery) $afficherReqXQuery = false;
 
 	$appURI = appURI();

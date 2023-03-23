@@ -1,3 +1,5 @@
 **/images/*
-**/photos/*
+!images/
 
+**/photos/*
+!photos/
