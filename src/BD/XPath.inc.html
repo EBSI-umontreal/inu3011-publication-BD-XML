@@ -2,14 +2,15 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>INU3011 - Expression XPath évaluée sur chaque document</title>
 	</head>
 	<body>
 <h1>INU3011 - Expression XPath évaluée sur chaque document</h1>
 <h2>Expression XPath: <tt><?php echo htmlspecialchars($XPathOrig); ?></tt></h2>
-<!--
-<h2>Expression modifiée: <tt><?php echo htmlspecialchars($rechercheXPath); ?></tt></h2>
--->
+
+<!-- <h2>Expression modifiée: <tt><?php echo htmlspecialchars($rechercheXPath); ?></tt></h2> -->
+
 <?php
 // Tout ca à nettoyer éventuellement:
 
@@ -58,7 +59,7 @@ $result = str_replace('/_kxz_4', '</ol>', $result);
 $result = str_replace('_kxz_4', '<ol>', $result);
 $result = str_replace('/_kxz_6', '&format=pre">[Source XML]</a>', $result);
 $result = str_replace('_kxz_6', '<a href="', $result);
-$result = str_replace('/_kxz_7', '&format=xslt">[Document styl&#233;]</a>', $result);
+$result = str_replace('/_kxz_7', '">[Document styl&#233;]</a>', $result);
 $result = str_replace('_kxz_7', '<a href="', $result);
 
 $result = str_replace('/_kxz_5', '</pre></li>', $result);

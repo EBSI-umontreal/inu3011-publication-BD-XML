@@ -1,12 +1,13 @@
 <?php
 //Auteur : Arnaud d'Alayer	Date : 2010-03-29
-//Dernières modifications : Yves Marcoux 2016-01-06
+//Dernières modifications : Yves Marcoux 2016-04-07
 
-	include "configuration.php";
+	include ((file_exists("YMAconfig.php")) ? "YMAconfig.php" : "configuration.php");
 
 	$serveurAdresse = "localhost";
 	$serveurPort = 1984;
 
+	if (!$feuilleXSLT) $feuilleXSLT = "XHTML-C.xsl";
 //	if (!$afficherReqXQuery) $afficherReqXQuery = false;
 
 	$appURI = appURI();
@@ -245,8 +246,9 @@ function preprocessXPath($XPathOrig) {
 
 //Vérifier qu'une expression XPath absolue avait été fournie
 	if ($rechercheXPath == $XPathOrig)
-// Si rien n'a changé, ce n'est pas une expression XPath absolue
-		echo "Veuillez sp&#233;cifier une expression XPath absolue";
+// Si rien n'a changé, ce n'est pas une expression XPath absolue; fix it up!
+		$rechercheXPath = '$doc/'.$XPathOrig;
+//		return "'Veuillez sp&#233;cifier une expression XPath absolue'";
 	return $rechercheXPath;
 };
 

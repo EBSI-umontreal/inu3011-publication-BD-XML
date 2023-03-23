@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../XSLT/XHTML.xsl"?>
+<!DOCTYPE fiche-poisson SYSTEM "../DTD/fiche-poisson.dtd" >
+<fiche-poisson image="oui" id="cyprinus_carpio">
+  <métadonnées>
+    <date-dern-modif>2016-03-28</date-dern-modif>
+    <créateur>Marina-Océane Poisson-Doré</créateur>
+    <créateur>Yves Marcoux</créateur>
+  </métadonnées>
+  <poisson>
+    <noms>
+      <nom-scientifique>Cyprinus carpio</nom-scientifique>
+    </noms>
+    <famille>Cyprinidés</famille>
+    <origines-géo>
+      <origine>États-Unis d’Amérique</origine>
+    </origines-géo>
+  </poisson>
+</fiche-poisson>

@@ -1,14 +1,17 @@
 (: Note : cette requête XQuery ne peut être exploitée directement,
 elle doit être adaptée par l'application PHP :)
 
+(: La collation semble sans effet pour la recherche "contains text" :)
+declare default collation '?lang=fr;strength=primary';
+
 let $res := (
 	for $doc in collection()
 	 where (RECHERCHEXPATH)
 	 return
 	  <li>
-		{substring-after(document-uri($doc), "/")} &#32;
+		{substring-after(substring(document-uri($doc), 2), "/")} &#32;
 		<a href="document.php?document={document-uri($doc)}&amp;format=pre">[Source XML]</a>
-		<a href="document.php?document={document-uri($doc)}&amp;format=xslt"
+		<a href="document.php?document={document-uri($doc)}"
 		>[Document styl&#233;]</a>
 	  </li>
 )

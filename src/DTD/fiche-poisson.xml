@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE modèleXML3011 SYSTEM "https://cours.ebsi.umontreal.ca/INU3011/modeleXML3011-NG/modeleXML3011.dtd" [
+  <!ENTITY % entités "oui">
+]>
+<modèleXML3011 xml:lang="fr">
+  <équipe>
+    <membre>
+      <prénom>Yves</prénom>
+      <nomFamille>Marcoux</nomFamille>
+      <matriculeUdeM>professeur</matriculeUdeM>
+    </membre>
+    <membre>
+      <prénom>Marilou</prénom>
+      <nomFamille>Bourque</nomFamille>
+      <matriculeUdeM>auxiliaire</matriculeUdeM>
+    </membre>
+    <membre>
+      <prénom>Arnaud</prénom>
+      <nomFamille>D’Alayer</nomFamille>
+      <matriculeUdeM>auxiliaire</matriculeUdeM>
+    </membre>
+  </équipe>
+  <contexteDuModèle>Copyright © Yves Marcoux 2016, 2017, 2018. <para>Modèle XML de fiches
+      descriptives d’espèces de poissons d’aquariophilie, inspiré d’un schéma créé en 2006 par
+      Arnaud D’Alayer et Marilou Bourque.</para>
+    <para>Ce modèle XML définit la structure d’une fiche descriptive d'une espèce de poisson
+      d’aquiariophilie. Il est utilisé extensivement comme exemple tout au long du cours « INU3011
+      Documents structurés » donné à l’EBSI, Université de Montréal.</para>
+    <para>Les fiches conformes à ce modèle sont destinées à servir de source d’informations pour
+        <em>toute personne s’intéressant à la tenue d’un aquarium</em>.</para>
+  </contexteDuModèle>
+  <EPHN> fiche-poisson </EPHN>
+  <entités>
+    <entité type="paramètre">
+      <nom>moyMinMaxComm</nom>
+      <texteRemplacement>((
+(moy, min?, max?) | (min, max?) | max
+), commentaires?)</texteRemplacement>
+      <description>Modèle de contenu correspondant à la mesure d’une certaine caractéristique
+        physique d’un poisson.</description>
+    </entité>
+    <entité type="paramètre">
+      <nom>texte</nom>
+      <texteRemplacement>(section+ | para+)</texteRemplacement>
+      <description>Modèle de contenu de texte structuré en sections ou en paragraphes.</description>
+    </entité>
+    <entité type="paramètre">
+      <nom>inline</nom>
+      <texteRemplacement>(#PCDATA | lien | tempé-C | long-cm | vol-litres | em)*</texteRemplacement>
+      <description>Modèle de contenu de texte rendu en un seul paragraphe.</description>
+    </entité>
+  </entités>
+  <éléments>
+    <élément>
+      <idGen>fiche-poisson</idGen>
+      <descriptionPourInfobulle>Une fiche descriptive d’une espèce de poisson d’aquariophilie.</descriptionPourInfobulle>
+      <modèleContenuXML>(métadonnées, poisson)</modèleContenuXML>
+      <attributs>
+        <attribut>
+          <nom>id</nom>
+          <descriptionPourInfobulle>L’identifiant de la fiche, soit son nom de fichier, sans l’extension ".xml".</descriptionPourInfobulle>
+          <NMTOKEN/>
+          <REQUIRED/>
+          <exemplesValeurAttendue>
+            <exemple>cyprinus_carpio</exemple>
+            <exemple>poissonus_panus</exemple>
+          </exemplesValeurAttendue>
+        </attribut>
+        <attribut>
+          <nom>image</nom>
+          <descriptionPourInfobulle>Indique si une photo du poisson est disponible ou non dans le dossier des photos.</descriptionPourInfobulle>
+          <énuméré>
+            <valeurPossible>oui</valeurPossible>
+            <valeurPossible>non</valeurPossible>
+          </énuméré>
+          <REQUIRED/>
+        </attribut>
+      </attributs>
+    </élément>
+    <élément>
+      <idGen> métadonnées </idGen>
+      <descriptionPourInfobulle>Les métadonnées de gestion de la fiche.</descriptionPourInfobulle>
+      <modèleContenuXML>(date-dern-modif, créateur+)</modèleContenuXML>
+    </élément>
+    <élément>
+      <idGen> poisson </idGen>
+      <descriptionPourInfobulle>L’information descriptive proprement dite de l’espèce de poisson.</descriptionPourInfobulle>
+      <modèleContenuXML>(noms, famille, origines-géo, première-description?, taille-cm?,
+longévité-ans?, qualité-eau?, zone-de-vie?, alimentation?, aspect-physique?, dimorphisme?,
+comportement?, reproduction?)</modèleContenuXML>
+    </élément>
+    <élément>
+      <idGen>date-dern-modif</idGen>
+      <descriptionPourInfobulle>Date de création ou de dernière modification de la fiche; forme AAA-MM-JJ.</descriptionPourInfobulle>
+      <modèleContenuXML>(#PCDATA)</modèleContenuXML>
+      <exemplesContenuAttendu>
+        <exemple>2018-09-30</exemple>
+        <exemple>2021-12-01</exemple>
+      </exemplesContenuAttendu>
+    </élément>
+    <élément>
+      <idGen>créateur</idGen>
+      <descriptionPourInfobulle>Nom d’une personne ayant contribué au contenu de la fiche; forme Prénom Nom-de-famille. Un élément "créateur" par contributeur.</descriptionPourInfobulle>
+      <modèleContenuXML>(#PCDATA)</modèleContenuXML>
+      <exemplesContenuAttendu>
+        <exemple>Jacques A. Le Maître</exemple>
+        <exemple>Lam Locong</exemple>
+      </exemplesContenuAttendu>
+    </élément>
+    <élément>
+      <idGen>noms</idGen>
+      <descriptionPourInfobulle>Les différents noms sous lesquels l’espèce de poisson est connue.</descriptionPourInfobulle>
+      <modèleContenuXML>(nom-scientifique, nom-commun*)</modèleContenuXML>
+    </élément>
+    <élément>
+      <idGen>nom-scientifique</idGen>
+      <descriptionPourInfobulle>Nom scientifique de l’espèce (habituellement un nom latin en deux mots). Inscrit avec majuscule initiale.</descriptionPourInfobulle>
+      <modèleContenuXML>(#PCDATA)</modèleContenuXML>
+      <exemplesContenuAttendu>
+        <exemple>Cyprinus carpio</exemple>
+        <exemple>Acanthicus adonis</exemple>
+      </exemplesContenuAttendu>
+    </élément>
+    <élément>
+      <idGen>nom-commun</idGen>
+      <descriptionPourInfobulle>Un nom populaire, en français ou en anglais, sous lequel l’espèce est connue. Inscrit avec majuscule initiale au premier mot seulement.</descriptionPourInfobulle>
+      <modèleContenuXML>(#PCDATA)</modèleContenuXML>
+      <exemplesContenuAttendu>
+        <exemple>Carpe commune</exemple>
+        <exemple>Adonis pleco</exemple>
+      </exemplesContenuAttendu>
+      <attributs>
+        <attribut>
+          <nom>langue</nom>
+          <descriptionPourInfobulle>Indique si le nom est en français (fr) ou en anglais (en).</descriptionPourInfobulle>
+          <énuméré>
+            <valeurPossible>fr</valeurPossible>
+            <valeurPossible>en</valeurPossible>
+          </énuméré>
+          <REQUIRED/>
+        </attribut>
+      </attributs>
+    </élément>
+    <élément>
+      <idGen>famille</idGen>
+      <descriptionPourInfobulle>Nom de la famille à laquelle l’espèce appartient. Habituellement un nom français au pluriel. Inscrit avec majuscule initiale.</descriptionPourInfobulle>
+      <modèleContenuXML>(#PCDATA)</modèleContenuXML>
+      <exemplesContenuAttendu>
+        <exemple>Cyprinidés</exemple>
+        <exemple>Ascanidés</exemple>
+      </exemplesContenuAttendu>
+    </élément>
+    <élément>
+      <idGen>origines-géo</idGen>
+      <descriptionPourInfobulle>Régions où l’on trouve l’espèce à l’état naturel.</descriptionPourInfobulle>
+      <modèleContenuXML>(origine+, commentaires?)</modèleContenuXML>
+    </élément>
+    <élément>
+      <idGen>origine</idGen>
+      <descriptionPourInfobulle>Une des origines géographiques de l’espèce. Si possible, utiliser une forme provenant d’un thésaurus géographique.</descriptionPourInfobulle>
+      <modèleContenuXML>(#PCDATA)</modèleContenuXML>
+      <exemplesContenuAttendu>
+        <exemple>Amérique du Sud - Uruguay - Río Negro</exemple>
+        <exemple>Australie - Queensland</exemple>
+      </exemplesContenuAttendu>
+    </élément>
+    <élément>
+      <idGen>première-description</idGen>
+      <descriptionPourInfobulle>Première description scientifique de l’espèce.</descriptionPourInfobulle>
+      <modèleContenuXML>(nom-du-descripteur, année)</modèleContenuXML>
+    </élément>
+    <élément>
+      <idGen>nom-du-descripteur</idGen>
+      <descriptionPourInfobulle>Nom de famille de la ou des personnes ayant décrit l’espèce pour la première fois. Si plus d’un nom, les séparer par "&amp;amp;".</descriptionPourInfobulle>
+      <modèleContenuXML>(#PCDATA)</modèleContenuXML>
+      <exemplesContenuAttendu>
+        <exemple>Isbrücker &amp;amp; Nijssen</exemple>
+        <exemple>Linnaeus</exemple>
+      </exemplesContenuAttendu>
+    </élément>
+    <élément>
+      <idGen>année</idGen>
+      <descriptionPourInfobulle>Année où l’espèce a été décrite pour la première fois.</descriptionPourInfobulle>
+      <modèleContenuXML>(#PCDATA)</modèleContenuXML>
+      <exemplesContenuAttendu>
+        <exemple>1926</exemple>
+        <exemple>2000</exemple>
+      </exemplesContenuAttendu>
+    </élément>
+    <élément>
+      <idGen>taille-cm</idGen>
+      <descriptionPourInfobulle>Longueur, en centimètres, des individus de cette espèce.</descriptionPourInfobulle>
+      <modèleContenuXML>((mâle, femelle)|(%moyMinMaxComm;))</modèleContenuXML>
+      <exemplesContenuAttendu>
+        <exemple><![CDATA[<mâle><moy>20</moy></mâle><femelle><moy>15</moy></femelle>]]></exemple>
+        <exemple><![CDATA[<min>43,5</min><max>55,6</max><commentaires>n=7</commentaires>]]></exemple>
+      </exemplesContenuAttendu>
+    </élément>
+    <élément>
+      <idGen>longévité-ans</idGen>
+      <descriptionPourInfobulle>L’espérance de vie des individus de cette espèce.</descriptionPourInfobulle>
+      <modèleContenuXML>(%moyMinMaxComm;)</modèleContenuXML>
+    </élément>
+    <élément>
+      <idGen>section</idGen>
+      <descriptionPourInfobulle>Bloc de texte consistant en un titre suivi d'un paragraphe ou plus.</descriptionPourInfobulle>
+      <modèleContenuXML>(titre, para+)</modèleContenuXML>
+    </élément>
+    <élément>
+      <idGen>titre</idGen>
+      <descriptionPourInfobulle>Titre d’une section.</descriptionPourInfobulle>
+      <modèleContenuXML>(#PCDATA)</modèleContenuXML>
+      <exemplesContenuAttendu>
+        <exemple>Approche générale</exemple>
+        <exemple>Conseils pour les débutants</exemple>
+      </exemplesContenuAttendu>
+    </élément>
+    <élément>
+      <idGen>para</idGen>
+      <descriptionPourInfobulle>Un paragraphe de texte. Peut contenir du texte et les sous-éléments suivants:
+  - em          passage en emphase;
+  - lien        lien vers autre fiche;
+  - tempé-C     température (en °C);
+  - long-cm     longueur (en cm);
+  - vol-litres  volume (en litres).</descriptionPourInfobulle>
+      <modèleContenuXML>%inline;</modèleContenuXML>
+      <exemplesContenuAttendu>
+        <exemple>Tous les spécimens ont survécu.</exemple>
+        <exemple><![CDATA[La température atteint rarement <tempé-C>42</tempé-C>.]]></exemple>
+        <exemple><![CDATA[C’est <em>inouï</em>.]]></exemple>
+      </exemplesContenuAttendu>
+    </élément>
+    <élément>
+      <idGen>em</idGen>
+      <descriptionPourInfobulle>Un passage en emphase dans un paragraphe. Peut contenir du texte et les sous-éléments suivants:
+  - em          passage (encore plus) en emphase;
+  - lien        lien vers autre fiche;
+  - tempé-C     température (en °C);
+  - long-cm     longueur (en cm);
+  - vol-litres  volume (en litres).</descriptionPourInfobulle>
+      <modèleContenuXML>%inline;</modèleContenuXML>
+      <exemplesContenuAttendu>
+        <exemple><![CDATA[plus grand que <lien id="cyprinus_carpio">Cyprinus carpio</lien>!]]></exemple>
+        <exemple><![CDATA[<long-cm>10</long-cm> de moins…]]></exemple>
+        <exemple><![CDATA[beaucoup <em>beaucoup</em> plus grand!]]></exemple>
+      </exemplesContenuAttendu>
+    </élément>
+    <élément>
+      <idGen>lien</idGen>
+      <descriptionPourInfobulle>Un lien vers une autre fiche. L’attribut "id" donne l’identifiant de la fiche cible, soit le nom de fichier de la fiche, sans l’extension ".xml". On doit inscrire comme contenu de l'élément le nom scientifique contenu dans la fiche cible.</descriptionPourInfobulle>
+      <modèleContenuXML>&pcdata;</modèleContenuXML>
+      <exemplesContenuAttendu>
+        <exemple>Cyprinus carpio</exemple>
+        <exemple>Acanthicus adonis</exemple>
+      </exemplesContenuAttendu>
+      <attributs>
+        <attribut>
+          <nom>id</nom>
+          <descriptionPourInfobulle>Identifiant de la fiche cible, soit le nom de fichier de la fiche, sans l’extension ".xml".</descriptionPourInfobulle>
+          <NMTOKEN/>
+          <REQUIRED/>
+          <exemplesValeurAttendue>
+            <exemple>cyprinus_carpio</exemple>
+            <exemple>paracheirodon_axelrodi</exemple>
+          </exemplesValeurAttendue>
+        </attribut>
+      </attributs>
+    </élément>
+    <élément>
+      <idGen>tempé-C</idGen>
+      <descriptionPourInfobulle>Une température, en degrés Celsius. Inscrire une valeur numérique seule, sans le mot "degrés".</descriptionPourInfobulle>
+      <modèleContenuXML>&pcdata;</modèleContenuXML>
+      <exemplesContenuAttendu>
+        <exemple>34,7</exemple>
+        <exemple>-2,45</exemple>
+        <exemple>0</exemple>
+      </exemplesContenuAttendu>
+    </élément>
+    <élément>
+      <idGen>long-cm</idGen>
+      <descriptionPourInfobulle>Une longueur, en centimètres. Inscrire une valeur numérique seule, sans le mot "centimètres".</descriptionPourInfobulle>
+      <modèleContenuXML>&pcdata;</modèleContenuXML>
+      <exemplesContenuAttendu>
+        <exemple>23</exemple>
+        <exemple>40,6</exemple>
+      </exemplesContenuAttendu>
+    </élément>
+    <élément>
+      <idGen>vol-litres</idGen>
+      <descriptionPourInfobulle>Un volume, en litres. Inscrire une valeur numérique seule, sans le mot "litres".</descriptionPourInfobulle>
+      <modèleContenuXML>&pcdata;</modèleContenuXML>
+      <exemplesContenuAttendu>
+        <exemple>248</exemple>
+        <exemple>0,983</exemple>
+      </exemplesContenuAttendu>
+    </élément>
+    <élément>
+      <idGen>qualité-eau</idGen>
+      <descriptionPourInfobulle>Caractéristiques de l’eau convenant à cette espèce.</descriptionPourInfobulle>
+      <modèleContenuXML>(température-C, acidité-pH?, dureté-dGH?)</modèleContenuXML>
+    </élément>
+    <élément>
+      <idGen>température-C</idGen>
+      <descriptionPourInfobulle>Température acceptable de l’eau (degrés Celsius).</descriptionPourInfobulle>
+      <modèleContenuXML>(%moyMinMaxComm;)</modèleContenuXML>
+    </élément>
+    <élément>
+      <idGen>acidité-pH</idGen>
+      <descriptionPourInfobulle>Acidité acceptable de l’eau (pH).</descriptionPourInfobulle>
+      <modèleContenuXML>(%moyMinMaxComm;)</modèleContenuXML>
+    </élément>
+    <élément>
+      <idGen>dureté-dGH</idGen>
+      <descriptionPourInfobulle>Dureté acceptable de l’eau (dGH).</descriptionPourInfobulle>
+      <modèleContenuXML>(%moyMinMaxComm;)</modèleContenuXML>
+    </élément>
+    <élément>
+      <idGen>zone-de-vie</idGen>
+      <descriptionPourInfobulle>Indication de la profondeur où l’on trouve habituellement l’espèce.</descriptionPourInfobulle>
+      <modèleContenuXML>(#PCDATA)</modèleContenuXML>
+      <exemplesContenuAttendu>
+        <exemple>Fond</exemple>
+        <exemple>Milieu et inférieure</exemple>
+        <exemple>Surface et milieu</exemple>
+        <exemple>Inférieure</exemple>
+      </exemplesContenuAttendu>
+    </élément>
+    <élément>
+      <idGen>alimentation</idGen>
+      <descriptionPourInfobulle>Informations, en format libre, concernant l’alimentation de cette espèce.</descriptionPourInfobulle>
+      <modèleContenuXML>(%texte;)</modèleContenuXML>
+    </élément>
+    <élément>
+      <idGen>aspect-physique</idGen>
+      <descriptionPourInfobulle>Informations, en format libre, concernant l’aspect physique de cette espèce.</descriptionPourInfobulle>
+      <modèleContenuXML>(%texte;)</modèleContenuXML>
+    </élément>
+    <élément>
+      <idGen>dimorphisme</idGen>
+      <descriptionPourInfobulle>Informations, en format libre, concernant le dimorphisme (différences entre mâles et femelles) de cette espèce.</descriptionPourInfobulle>
+      <modèleContenuXML>(%texte;)</modèleContenuXML>
+    </élément>
+    <élément>
+      <idGen>comportement</idGen>
+      <descriptionPourInfobulle>Informations, en format libre, concernant le comportement de cette espèce.</descriptionPourInfobulle>
+      <modèleContenuXML>(%texte;)</modèleContenuXML>
+    </élément>
+    <élément>
+      <idGen>reproduction</idGen>
+      <descriptionPourInfobulle>Informations, en format libre, concernant la reproduction de cette espèce.</descriptionPourInfobulle>
+      <modèleContenuXML>(%texte;)</modèleContenuXML>
+    </élément>
+    <élément>
+      <idGen>mâle</idGen>
+      <descriptionPourInfobulle>Longueur, en centimètres, des individus mâles de cette espèce.</descriptionPourInfobulle>
+      <modèleContenuXML>(%moyMinMaxComm;)</modèleContenuXML>
+    </élément>
+    <élément>
+      <idGen>femelle</idGen>
+      <descriptionPourInfobulle>Longueur, en centimètres, des individus femelles de cette espèce.</descriptionPourInfobulle>
+      <modèleContenuXML>(%moyMinMaxComm;)</modèleContenuXML>
+    </élément>
+    <élément>
+      <idGen>commentaires</idGen>
+      <descriptionPourInfobulle>Un paragraphe ou plus de commentaires en format libre se rapportant à l’élément où ces commentaires se trouvent.</descriptionPourInfobulle>
+      <modèleContenuXML>(para+)</modèleContenuXML>
+    </élément>
+    <élément>
+      <idGen>moy</idGen>
+      <descriptionPourInfobulle>Valeur numérique correspondant à la valeur moyenne d’une mesure. Ne pas inscrire le nom de l’unité.</descriptionPourInfobulle>
+      <modèleContenuXML>(#PCDATA)</modèleContenuXML>
+      <exemplesContenuAttendu>
+        <exemple>45,987</exemple>
+        <exemple>17</exemple>
+        <exemple>0,52</exemple>
+      </exemplesContenuAttendu>
+    </élément>
+    <élément>
+      <idGen>max</idGen>
+      <descriptionPourInfobulle>Valeur numérique correspondant à la valeur maximum d’une mesure. Ne pas inscrire le nom de l’unité.</descriptionPourInfobulle>
+      <modèleContenuXML>(#PCDATA)</modèleContenuXML>
+      <exemplesContenuAttendu>
+        <exemple>45,987</exemple>
+        <exemple>17</exemple>
+        <exemple>0,52</exemple>
+      </exemplesContenuAttendu>
+    </élément>
+    <élément>
+      <idGen>min</idGen>
+      <descriptionPourInfobulle>Valeur numérique correspondant à la valeur minimum d’une mesure. Ne pas inscrire le nom de l’unité.</descriptionPourInfobulle>
+      <modèleContenuXML>(#PCDATA)</modèleContenuXML>
+      <exemplesContenuAttendu>
+        <exemple>45,987</exemple>
+        <exemple>17</exemple>
+        <exemple>0,52</exemple>
+      </exemplesContenuAttendu>
+    </élément>
+  </éléments>
+</modèleXML3011>

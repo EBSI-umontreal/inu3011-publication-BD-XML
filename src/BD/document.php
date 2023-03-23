@@ -10,9 +10,9 @@
 	
 	Paramètres de cette page :
 	- document (obligatoire - string) : nom du document XML à récupérer dans la base de données; le nom du document doit inclure le nom de la collection (exemple : /db/demo/fichier.xml)
-	- format (obligatoire - string) : Format de sortie. Les valeurs possibles sont :
+	- format (facultatif - string) : Format de sortie. Les valeurs possibles sont :
 		- xml : le serveur ajoute une entête XML suivi du contenu du document XML (veuillez vous assurer que les liens vers les différents fichiers seront fonctionnels pour qu'il s'affiche correctement dans le navigateur)
-		- xslt : le serveur retourne le résultat d'une transformation XSLT du document XML; La feuille de style XSLT doit être spécifiée (voir paramètre xslt)
+		- xslt : (valeur par défaut) le serveur retourne le résultat d'une transformation XSLT du document XML; La feuille de style XSLT doit être spécifiée (voir paramètre xslt)
 		- pre : le serveur retourne le contenu du document XML sous forme HTML dans un conteneur <pre>
 		- brut (non recommandé) : le serveur retourne le contenu du document XML directement (sans ajout d'entête XML)
 	- xslt (facultatif - string) : nom de la feuille de styles XSLT (dans le dossier "xslt/") à appliquer lorsque le format de de sortie xslt est spécifié
@@ -33,6 +33,10 @@
 	include "fonctions.php";
 	$document = $_GET['document'];
 	$format = $_GET['format'];
+	if ($format == '') {
+		$format = 'xslt';
+	}
+// 'xslt' est le format par défaut
 //	$feuilleXSLT = $_GET['xslt'];
 
 function fixdocuri($docuri) {

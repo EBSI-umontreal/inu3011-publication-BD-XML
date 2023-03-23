@@ -1,88 +1,88 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<?xml-stylesheet type="text/xsl" href="../xslt/stylage-poissons-metrique.xsl"?>
-<!DOCTYPE fiche SYSTEM "../DTD/fiche-poisson.dtd" >
-<fiche image="oui" id="paracheirodon_axelrodi">
-  <métadonnées>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../XSLT/XHTML.xsl"?>
+<!DOCTYPE fiche-poisson SYSTEM "../DTD/fiche-poisson.dtd" >
+<fiche-poisson image="oui" id="paracheirodon_axelrodi">
+  <mÃ©tadonnÃ©es>
     <date-dern-modif>2016-03-30</date-dern-modif>
-    <créateur>Marilou Bourque</créateur>
-    <créateur>Arnaud d&#8217;Alayer</créateur>
-  </métadonnées>
+    <crÃ©ateur>Marilou Bourque</crÃ©ateur>
+    <crÃ©ateur>Arnaud d&#8217;Alayer</crÃ©ateur>
+  </mÃ©tadonnÃ©es>
   <poisson>
     <noms>
       <nom-scientifique>Paracheirodon axelrodi</nom-scientifique>
       <nom-commun langue="fr">Cardinalis</nom-commun>
       <nom-commun langue="fr">Cheirondon axelrodi</nom-commun>
       <nom-commun langue="fr">Chort</nom-commun>
-      <nom-commun langue="fr">Néon cardinalis</nom-commun>
-      <nom-commun langue="fr">Tétra Cardinal</nom-commun>
+      <nom-commun langue="fr">NÃ©on cardinalis</nom-commun>
+      <nom-commun langue="fr">TÃ©tra Cardinal</nom-commun>
     </noms>
-    <famille>Characidés</famille>
-    <origines>
-      <origine>Amérique - Amérique du Sud - Uruguay - Rìo Negro</origine>
-      <origine>Amérique du sud - Rio negro</origine>
-      <origine>Amérique du sud - Bassin de l&#8217;Orénoque</origine>
-    </origines>
-    <première-description>
+    <famille>CharacidÃ©s</famille>
+    <origines-gÃ©o>
+      <origine>AmÃ©rique - AmÃ©rique du Sud - Uruguay - RÃ­o Negro</origine>
+      <origine>AmÃ©rique du sud - RÃ­o negro</origine>
+      <origine>AmÃ©rique du sud - Bassin de l&#8217;OrÃ©noque</origine>
+    </origines-gÃ©o>
+    <premiÃ¨re-description>
       <nom-du-descripteur>Schultz</nom-du-descripteur>
-      <année>1956</année>
-    </première-description>
+      <annÃ©e>1956</annÃ©e>
+    </premiÃ¨re-description>
     <taille-cm>
-      <mâle>
-        <moy>5.0</moy>
-      </mâle>
+      <mÃ¢le>
+        <moy>5,0</moy>
+      </mÃ¢le>
       <femelle>
-        <moy>5.0</moy>
+        <moy>5,0</moy>
       </femelle>
     </taille-cm>
-    <longévité-ans>
+    <longÃ©vitÃ©-ans>
       <min>2</min>
       <max>8</max>
-    </longévité-ans>
-    <qualité-eau>
-      <température-C>
+    </longÃ©vitÃ©-ans>
+    <qualitÃ©-eau>
+      <tempÃ©rature-C>
         <min>25</min>
         <max>30</max>
         <commentaires>
-          <para><tempé-C>23</tempé-C> pour la reproduction</para>
+          <para><tempÃ©-C>23</tempÃ©-C> pour la reproduction</para>
         </commentaires>
-      </température-C>
-      <ph>
+      </tempÃ©rature-C>
+      <aciditÃ©-pH>
         <min>5</min>
         <max>7</max>
         <commentaires>
           <para>6 pour la reproduction</para>
         </commentaires>
-      </ph>
-      <dureté>
+      </aciditÃ©-pH>
+      <duretÃ©-dGH>
         <min>1</min>
         <max>8</max>
         <commentaires>
           <para>2 pour la reproduction</para>
         </commentaires>
-      </dureté>
-    </qualité-eau>
+      </duretÃ©-dGH>
+    </qualitÃ©-eau>
     <zone-de-vie>Milieu</zone-de-vie>
     <alimentation>
       <para>C&#8217;est un insectivore en milieu naturel. </para>
     </alimentation>
-    <description>
-      <para>Le corps est divisé en 3 bandes horizontales différemment pigmentées, de haut en
+    <aspect-physique>
+      <para>Le corps est divisÃ© en 3 bandes horizontales diffÃ©remment pigmentÃ©es, de haut en
         bas&#160;: brun, bleu fluorescent et rouge fluorescent. Le ventre est blanc. </para>
-      <para>Souvent confondu avec le Paracheirodon innesi (Néon), il se démarque de ce dernier par
-        la bande rouge sur la partie inférieure du corps qui s&#8217;étend du museau jusqu&#8217;à
+      <para>Souvent confondu avec le Paracheirodon innesi (NÃ©on), il se dÃ©marque de ce dernier par
+        la bande rouge sur la partie infÃ©rieure du corps qui s&#8217;Ã©tend du museau jusqu&#8217;Ã 
         la caudale. </para>
-    </description>
+    </aspect-physique>
     <dimorphisme>
-      <para>Chez l&#8217;adulte, le mâle est plus fin que la femelle. </para>
+      <para>Chez l&#8217;adulte, le mÃ¢le est plus fin que la femelle. </para>
     </dimorphisme>
     <comportement>
-      <para>Le Cardinalis vit en banc. Lorsqu&#8217;il se sent en sécurité, le groupe
-        s&#8217;éparpille, mais ces poissons ont besoin de pouvoir se regrouper en cas de stress
-        passager. De ce fait, il doit être introduit au nombre de 10 individus minimum pour se
-        sentir en sécurité. Dans la nature, les Cardinalis forment en effet des bancs de plusieurs
-        milliers d&#8217;individus. Dans le cas contraire, ils risquent de développer des maladies
+      <para>Le Cardinalis vit en banc. Lorsqu&#8217;il se sent en sÃ©curitÃ©, le groupe
+        s&#8217;Ã©parpille, mais ces poissons ont besoin de pouvoir se regrouper en cas de stress
+        passager. De ce fait, il doit Ãªtre introduit au nombre de 10 individus minimum pour se
+        sentir en sÃ©curitÃ©. Dans la nature, les Cardinalis forment en effet des bancs de plusieurs
+        milliers d&#8217;individus. Dans le cas contraire, ils risquent de dÃ©velopper des maladies
         dues au stress. </para>
-      <para>C&#8217;est un poisson très vif qui préfère une eau douce et acide. </para>
+      <para>C&#8217;est un poisson trÃ¨s vif qui prÃ©fÃ¨re une eau douce et acide. </para>
     </comportement>
   </poisson>
-</fiche>
+</fiche-poisson>

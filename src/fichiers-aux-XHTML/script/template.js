@@ -2,10 +2,17 @@
    Cette fonction ajoute les évènements intéractifs de la page
 */
 function chargerEvenements(){
-  addEvent(document.getElementById("ancre-ph"), "mouseover", function(e) {afficher("popup-ph")});
-  addEvent(document.getElementById("ancre-ph"), "mouseout",  function(e) {cacher("popup-ph")});
-  addEvent(document.getElementById("ancre-gh"), "mouseover", function(e) {afficher("popup-gh")});
-  addEvent(document.getElementById("ancre-gh"), "mouseout",  function(e) {cacher("popup-gh")});
+/* YMA 2016-03-09
+Il faut tester la présence des éléments, parce qu'ils ne sont pas dans
+la page si aucune information sur la qualité de l'eau n'est présente. */
+	if (document.getElementById("ancre-ph")) {
+	  addEvent(document.getElementById("ancre-ph"), "mouseover", function(e) {afficher("popup-ph")});
+	  addEvent(document.getElementById("ancre-ph"), "mouseout",  function(e) {cacher("popup-ph")});
+	};
+	if (document.getElementById("ancre-gh")) {
+	  addEvent(document.getElementById("ancre-gh"), "mouseover", function(e) {afficher("popup-gh")});
+	  addEvent(document.getElementById("ancre-gh"), "mouseout",  function(e) {cacher("popup-gh")});
+	};
 }
 addEvent(window,"load",function(e) {chargerEvenements()});
 

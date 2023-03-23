@@ -7,7 +7,7 @@
     for $doc in collection()
     return
         <li>
-{substring-after(document-uri($doc), '/')} &#160;
+{substring-after(substring(document-uri($doc), 2), '/')} &#160;
 <a href="document.php?document={document-uri($doc)}&amp;format=pre">[Source XML]</a>
 <a href="document.php?document={document-uri($doc)}&amp;format=xslt">[Document styl&#233;]</a>
         </li>

@@ -1,101 +1,220 @@
-<?xml encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Modèle XML développé dans le cadre du cours INU3011 Documents structurés -->
+<!-- EBSI - Université de Montréal -->
 
-<!ENTITY % moyMinMaxComm "
-	(moy, min?, max?, commentaires?) |
-	(min, max?, commentaires?) |
-	(max, commentaires?)
-	">
-
-<!ENTITY % texte "(section+ | para+)">
-
-<!ELEMENT section (titre, para+)>
-
-<!ELEMENT titre (#PCDATA)>
-
-<!ELEMENT para (#PCDATA | lien | tempé-C | long-cm | vol-litres)*>
-
-<!ELEMENT lien EMPTY>
-<!ATTLIST lien id NMTOKEN #REQUIRED>
-
-<!ELEMENT tempé-C (#PCDATA)>
-
-<!ELEMENT long-cm (#PCDATA)>
-
-<!ELEMENT vol-litres (#PCDATA)>
-
-<!ELEMENT fiche (métadonnées, poisson)>
-<!ATTLIST fiche
-  id NMTOKEN #REQUIRED
-  image (oui | non) "non">
-
-<!ELEMENT métadonnées (date-dern-modif, créateur+)>
-
-<!ELEMENT poisson (noms, famille, origines, première-description?, taille-cm?, longévité-ans?,
-                   qualité-eau?, zone-de-vie?, alimentation?, description?,
-                   dimorphisme?, comportement?, reproduction?)>
+<!-- Équipe: Marilou Bourque (auxiliaire), Arnaud D’Alayer (auxiliaire), Yves Marcoux (professeur). -->
+<!-- Élément de plus haut niveau: fiche-poisson -->
 
 <!--
-Déclaration utilisée pour des tests:
-<!ELEMENT poisson (#PCDATA | noms | famille | origines | première-description | taille-cm | longévité-ans |
-                   qualité-eau | zone-de-vie | alimentation | description |
-                   dimorphisme | comportement | reproduction)*>
+Les commentaires commençant par "doc:" sont utilisés par oXygen comme documentation d’aide à la
+saisie. Ils sont affichés en infobulles pendant l’édition de documents conformes à la DTD lorsque le
+curseur survole un nom d’élément ou d’attribut.
 -->
 
+<!-- Modèle de contenu correspondant à la mesure d’une certaine caractéristique
+        physique d’un poisson. -->
+<!ENTITY % moyMinMaxComm "((
+(moy, min?, max?) | (min, max?) | max
+), commentaires?)">
+
+<!-- Modèle de contenu de texte structuré en sections ou en paragraphes. -->
+<!ENTITY % texte "(section+ | para+)">
+
+<!-- Modèle de contenu de texte rendu en un seul paragraphe. -->
+<!ENTITY % inline "(#PCDATA | lien | tempé-C | long-cm | vol-litres | em)*">
+
+<!-- doc: Une fiche descriptive d’une espèce de poisson d’aquariophilie. -->
+<!ELEMENT fiche-poisson (métadonnées, poisson)>
+
+<!-- doc: L’identifiant de la fiche, soit son nom de fichier, sans l’extension ".xml". Exemples:
+  cyprinus_carpio
+  poissonus_panus -->
+<!ATTLIST fiche-poisson id NMTOKEN #REQUIRED>
+
+<!-- doc: Indique si une photo du poisson est disponible ou non dans le dossier des photos. -->
+<!ATTLIST fiche-poisson image (oui | non) #REQUIRED>
+
+<!-- doc: Les métadonnées de gestion de la fiche. -->
+<!ELEMENT métadonnées (date-dern-modif, créateur+)>
+
+<!-- doc: L’information descriptive proprement dite de l’espèce de poisson. -->
+<!ELEMENT poisson (noms, famille, origines-géo, première-description?, taille-cm?,
+longévité-ans?, qualité-eau?, zone-de-vie?, alimentation?, aspect-physique?, dimorphisme?,
+comportement?, reproduction?)>
+
+<!-- doc: Date de création ou de dernière modification de la fiche; forme AAA-MM-JJ. Exemples:
+  2018-09-30
+  2021-12-01 -->
 <!ELEMENT date-dern-modif (#PCDATA)>
 
+<!-- doc: Nom d’une personne ayant contribué au contenu de la fiche; forme Prénom Nom-de-famille. Un élément "créateur" par contributeur. Exemples:
+  Jacques A. Le Maître
+  Lam Locong -->
 <!ELEMENT créateur (#PCDATA)>
 
+<!-- doc: Les différents noms sous lesquels l’espèce de poisson est connue. -->
 <!ELEMENT noms (nom-scientifique, nom-commun*)>
 
+<!-- doc: Nom scientifique de l’espèce (habituellement un nom latin en deux mots). Inscrit avec majuscule initiale. Exemples:
+  Cyprinus carpio
+  Acanthicus adonis -->
 <!ELEMENT nom-scientifique (#PCDATA)>
 
+<!-- doc: Un nom populaire, en français ou en anglais, sous lequel l’espèce est connue. Inscrit avec majuscule initiale au premier mot seulement. Exemples:
+  Carpe commune
+  Adonis pleco -->
 <!ELEMENT nom-commun (#PCDATA)>
+
+<!-- doc: Indique si le nom est en français (fr) ou en anglais (en). -->
 <!ATTLIST nom-commun langue (fr | en) #REQUIRED>
 
+<!-- doc: Nom de la famille à laquelle l’espèce appartient. Habituellement un nom français au pluriel. Inscrit avec majuscule initiale. Exemples:
+  Cyprinidés
+  Ascanidés -->
 <!ELEMENT famille (#PCDATA)>
 
-<!ELEMENT origines (origine+, commentaires?)>
+<!-- doc: Régions où l’on trouve l’espèce à l’état naturel. -->
+<!ELEMENT origines-géo (origine+, commentaires?)>
 
-<!ELEMENT première-description (nom-du-descripteur, année)>
-
-<!ELEMENT nom-du-descripteur (#PCDATA)>
-
-<!ELEMENT année (#PCDATA)>
-
-<!ELEMENT taille-cm ((mâle, femelle)|(%moyMinMaxComm;))>
-
-<!ELEMENT longévité-ans (%moyMinMaxComm;)>
-
-<!ELEMENT qualité-eau (température-C, ph?, dureté?)>
-
-<!ELEMENT température-C (%moyMinMaxComm;)>
-
-<!ELEMENT ph (%moyMinMaxComm;)>
-
-<!ELEMENT dureté (%moyMinMaxComm;)>
-
-<!ELEMENT zone-de-vie (#PCDATA)>
-
-<!ELEMENT alimentation (%texte;)+>
-
-<!ELEMENT description (%texte;)>
-
-<!ELEMENT dimorphisme (%texte;)>
-
-<!ELEMENT comportement (%texte;)>
-
-<!ELEMENT reproduction (%texte;)>
-
+<!-- doc: Une des origines géographiques de l’espèce. Si possible, utiliser une forme provenant d’un thésaurus géographique. Exemples:
+  Amérique du Sud - Uruguay - Río Negro
+  Australie - Queensland -->
 <!ELEMENT origine (#PCDATA)>
 
+<!-- doc: Première description scientifique de l’espèce. -->
+<!ELEMENT première-description (nom-du-descripteur, année)>
+
+<!-- doc: Nom de famille de la ou des personnes ayant décrit l’espèce pour la première fois. Si plus d’un nom, les séparer par "&amp;". Exemples:
+  Isbrücker &amp; Nijssen
+  Linnaeus -->
+<!ELEMENT nom-du-descripteur (#PCDATA)>
+
+<!-- doc: Année où l’espèce a été décrite pour la première fois. Exemples:
+  1926
+  2000 -->
+<!ELEMENT année (#PCDATA)>
+
+<!-- doc: Longueur, en centimètres, des individus de cette espèce. Exemples:
+  <mâle><moy>20</moy></mâle><femelle><moy>15</moy></femelle>
+  <min>43,5</min><max>55,6</max><commentaires>n=7</commentaires> -->
+<!ELEMENT taille-cm ((mâle, femelle)|(%moyMinMaxComm;))>
+
+<!-- doc: L’espérance de vie des individus de cette espèce. -->
+<!ELEMENT longévité-ans (%moyMinMaxComm;)>
+
+<!-- doc: Bloc de texte consistant en un titre suivi d'un paragraphe ou plus. -->
+<!ELEMENT section (titre, para+)>
+
+<!-- doc: Titre d’une section. Exemples:
+  Approche générale
+  Conseils pour les débutants -->
+<!ELEMENT titre (#PCDATA)>
+
+<!-- doc: Un paragraphe de texte. Peut contenir du texte et les sous-éléments suivants:
+  - em          passage en emphase;
+  - lien        lien vers autre fiche;
+  - tempé-C     température (en °C);
+  - long-cm     longueur (en cm);
+  - vol-litres  volume (en litres). Exemples:
+  Tous les spécimens ont survécu.
+  La température atteint rarement <tempé-C>42</tempé-C>.
+  C’est <em>inouï</em>. -->
+<!ELEMENT para %inline;>
+
+<!-- doc: Un passage en emphase dans un paragraphe. Peut contenir du texte et les sous-éléments suivants:
+  - em          passage (encore plus) en emphase;
+  - lien        lien vers autre fiche;
+  - tempé-C     température (en °C);
+  - long-cm     longueur (en cm);
+  - vol-litres  volume (en litres). Exemples:
+  plus grand que <lien id="cyprinus_carpio">Cyprinus carpio</lien>!
+  <long-cm>10</long-cm> de moins…
+  beaucoup <em>beaucoup</em> plus grand! -->
+<!ELEMENT em %inline;>
+
+<!-- doc: Un lien vers une autre fiche. L’attribut "id" donne l’identifiant de la fiche cible, soit le nom de fichier de la fiche, sans l’extension ".xml". On doit inscrire comme contenu de l'élément le nom scientifique contenu dans la fiche cible. Exemples:
+  Cyprinus carpio
+  Acanthicus adonis -->
+<!ELEMENT lien (#PCDATA)>
+
+<!-- doc: Identifiant de la fiche cible, soit le nom de fichier de la fiche, sans l’extension ".xml". Exemples:
+  cyprinus_carpio
+  paracheirodon_axelrodi -->
+<!ATTLIST lien id NMTOKEN #REQUIRED>
+
+<!-- doc: Une température, en degrés Celsius. Inscrire une valeur numérique seule, sans le mot "degrés". Exemples:
+  34,7
+  -2,45
+  0 -->
+<!ELEMENT tempé-C (#PCDATA)>
+
+<!-- doc: Une longueur, en centimètres. Inscrire une valeur numérique seule, sans le mot "centimètres". Exemples:
+  23
+  40,6 -->
+<!ELEMENT long-cm (#PCDATA)>
+
+<!-- doc: Un volume, en litres. Inscrire une valeur numérique seule, sans le mot "litres". Exemples:
+  248
+  0,983 -->
+<!ELEMENT vol-litres (#PCDATA)>
+
+<!-- doc: Caractéristiques de l’eau convenant à cette espèce. -->
+<!ELEMENT qualité-eau (température-C, acidité-pH?, dureté-dGH?)>
+
+<!-- doc: Température acceptable de l’eau (degrés Celsius). -->
+<!ELEMENT température-C (%moyMinMaxComm;)>
+
+<!-- doc: Acidité acceptable de l’eau (pH). -->
+<!ELEMENT acidité-pH (%moyMinMaxComm;)>
+
+<!-- doc: Dureté acceptable de l’eau (dGH). -->
+<!ELEMENT dureté-dGH (%moyMinMaxComm;)>
+
+<!-- doc: Indication de la profondeur où l’on trouve habituellement l’espèce. Exemples:
+  Fond
+  Milieu et inférieure
+  Surface et milieu
+  Inférieure -->
+<!ELEMENT zone-de-vie (#PCDATA)>
+
+<!-- doc: Informations, en format libre, concernant l’alimentation de cette espèce. -->
+<!ELEMENT alimentation (%texte;)>
+
+<!-- doc: Informations, en format libre, concernant l’aspect physique de cette espèce. -->
+<!ELEMENT aspect-physique (%texte;)>
+
+<!-- doc: Informations, en format libre, concernant le dimorphisme (différences entre mâles et femelles) de cette espèce. -->
+<!ELEMENT dimorphisme (%texte;)>
+
+<!-- doc: Informations, en format libre, concernant le comportement de cette espèce. -->
+<!ELEMENT comportement (%texte;)>
+
+<!-- doc: Informations, en format libre, concernant la reproduction de cette espèce. -->
+<!ELEMENT reproduction (%texte;)>
+
+<!-- doc: Longueur, en centimètres, des individus mâles de cette espèce. -->
 <!ELEMENT mâle (%moyMinMaxComm;)>
 
+<!-- doc: Longueur, en centimètres, des individus femelles de cette espèce. -->
 <!ELEMENT femelle (%moyMinMaxComm;)>
 
-<!ELEMENT commentaires (%texte;)>
+<!-- doc: Un paragraphe ou plus de commentaires en format libre se rapportant à l’élément où ces commentaires se trouvent. -->
+<!ELEMENT commentaires (para+)>
 
+<!-- doc: Valeur numérique correspondant à la valeur moyenne d’une mesure. Ne pas inscrire le nom de l’unité. Exemples:
+  45,987
+  17
+  0,52 -->
 <!ELEMENT moy (#PCDATA)>
 
-<!ELEMENT min (#PCDATA)>
-
+<!-- doc: Valeur numérique correspondant à la valeur maximum d’une mesure. Ne pas inscrire le nom de l’unité. Exemples:
+  45,987
+  17
+  0,52 -->
 <!ELEMENT max (#PCDATA)>
+
+<!-- doc: Valeur numérique correspondant à la valeur minimum d’une mesure. Ne pas inscrire le nom de l’unité. Exemples:
+  45,987
+  17
+  0,52 -->
+<!ELEMENT min (#PCDATA)>

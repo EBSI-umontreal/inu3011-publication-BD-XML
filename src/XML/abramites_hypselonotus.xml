@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="../xslt/stylage-poissons-metrique.xsl"?>
-<!DOCTYPE fiche SYSTEM "../DTD/fiche-poisson.dtd" >
-<fiche image="oui" id="abramites_hypselonotus">
+<?xml-stylesheet type="text/xsl" href="../XSLT/XHTML.xsl"?>
+<!DOCTYPE fiche-poisson SYSTEM "../DTD/fiche-poisson.dtd" >
+<fiche-poisson image="oui" id="abramites_hypselonotus">
   <métadonnées>
     <date-dern-modif>2016-03-30</date-dern-modif>
     <créateur>Marilou Bourque</créateur>
@@ -16,21 +16,21 @@
       <nom-commun langue="en">Marbled headstander</nom-commun>
     </noms>
     <famille>Anostomidés</famille>
-    <origines>
+    <origines-géo>
       <origine>Amérique - Amérique du sud - Pérou - Amazonas </origine>
       <origine>Bassin de l&#8217;Orénoque </origine>
       <origine>Bassin de l&#8217;Amazone </origine>
-    </origines>
+    </origines-géo>
     <première-description>
       <nom-du-descripteur>Günther</nom-du-descripteur>
       <année>1868</année>
     </première-description>
     <taille-cm>
       <mâle>
-        <moy>14.0</moy>
+        <moy>14,0</moy>
       </mâle>
       <femelle>
-        <moy>14.0</moy>
+        <moy>14,0</moy>
       </femelle>
     </taille-cm>
     <qualité-eau>
@@ -38,14 +38,14 @@
         <min>23</min>
         <max>27</max>
       </température-C>
-      <ph>
-        <min>6.0</min>
-        <max>7.5</max>
-      </ph>
-      <dureté>
+      <acidité-pH>
+        <min>6,0</min>
+        <max>7,5</max>
+      </acidité-pH>
+      <dureté-dGH>
         <min>4</min>
         <max>15</max>
-      </dureté>
+      </dureté-dGH>
     </qualité-eau>
     <zone-de-vie>Milieu et inférieure</zone-de-vie>
     <alimentation>
@@ -53,7 +53,7 @@
       <para>Lui fournir régulièrement de la nourriture végétale pour éviter qu&#8217;il ne
         s&#8217;attaque aux plantes de l&#8217;aquarium. </para>
       <para>À cause de son alimentation incompatible, cette espèce ne doit pas cohabiter avec le
-          <lien id="pterophyllum_altum"/>.</para>
+        <lien id="pterophyllum_altum">Pterophyllum altum</lien>.</para>
     </alimentation>
     <dimorphisme>
       <para>Impossible à déterminer à l&#8217;œil nu.</para>
@@ -63,4 +63,4 @@
         ils deviennent intolérants vis-à-vis des poissons de leur propre espèce. </para>
     </comportement>
   </poisson>
-</fiche>
+</fiche-poisson>

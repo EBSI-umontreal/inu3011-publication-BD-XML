@@ -1,22 +1,32 @@
-<?xml version="1.0" ?>
-<?xml-stylesheet type="text/xsl" href="../xslt/stylage-poissons-metrique.xsl"?>
-<!DOCTYPE fiche SYSTEM "../DTD/fiche-poisson.dtd" >
-<fiche id="acanthicus_adonis">
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="../XSLT/XHTML.xsl"?>
+<!DOCTYPE fiche-poisson SYSTEM "../DTD/fiche-poisson.dtd" >
+<fiche-poisson id="acanthicus_adonis" image="non">
   <métadonnées>
     <date-dern-modif>2019-03-29</date-dern-modif>
+    <créateur>Océane-Marina Doré-Poisson</créateur>
+    <créateur>Elvis Tekakwitha</créateur>
     <créateur>Yves Marcoux</créateur>
   </métadonnées>
   <poisson>
     <noms>
       <nom-scientifique>Acanthicus adonis</nom-scientifique>
-      <nom-commun langue="fr">Adonis Pleco</nom-commun>
+      <nom-commun langue="fr">Adonis pleco</nom-commun>
+      <nom-commun langue="en">Acary avion</nom-commun>
     </noms>
     <famille>Loricariidés</famille>
-    <origines>
+    <origines-géo>
       <origine>Amérique du Sud</origine>
       <origine>Brésil (État de Pará)</origine>
       <origine>Bassin de la rivière Tocantins jusqu&#8217;à Cometà (État de Pará)</origine>
-    </origines>
+      <commentaires>
+        <para>On peut discourir longtemps sur la distribution géographique d’une espèce; cependant,
+          les auteurs s’entendent généralement sur une différence entre les Amériques et l’Asie.</para>
+        <para>Dans le cas qui nous intéresse ici, on peut statuer sans grand risque de se tromper
+          qu’il est plus probable de rencontrer un spécimen de l’espèce dans les Amériques que
+          n’importe où ailleurs dans le monde.</para>
+      </commentaires>
+    </origines-géo>
     <première-description>
       <nom-du-descripteur>Isbrücker &amp; Nijssen</nom-du-descripteur>
       <année>1988</année>
@@ -24,27 +34,75 @@
     <taille-cm>
       <mâle>
         <moy>100</moy>
+        <min>72</min>
+        <max>200</max>
+        <commentaires>
+          <para>Ici, les nombres parlent par eux-mêmes.</para>
+          <para>Il faut écouter, mais à qui le fait, la lumière apparaît promptement, par le
+            truchement des paroles prononcées par les nombres, qui parlent d’eux-mêmes.</para>
+          <para>Ou dit-on plutôt « en eux-mêmes »? Le doute est lourd à porter.</para>
+        </commentaires>
       </mâle>
       <femelle>
         <moy>96</moy>
+        <min>87</min>
+        <max>101</max>
+        <commentaires>
+          <para>Il est clair que la longueur moyenne de la femelle est supérieure à la longueur
+            minimum. Ce qui n’est pas dit, c’est si la majorité des individus femelles ont une
+            taille inférieure ou supérieure à cette moyenne.</para>
+          <para>On peut presque exclure le cas où la majorité des individus femelles auraient une taille
+            exactement égale à la moyenne; n’est-ce pas, en effet, difficile à imaginer?</para>
+        </commentaires>
       </femelle>
     </taille-cm>
     <longévité-ans>
+      <moy>31</moy>
       <min>30</min>
+      <max>33</max>
+      <commentaires>
+        <para>Ces nombres laissent les auteurs de cette fiche pantois, perplexes et dubitatifs.</para>
+        <para>Cependant, n’ayant d’autre source pour corroborer ou infirmer ces informations, force
+          est de les inscrire, en prenant par ailleurs soin d’ajouter la présente note à l’effet que
+        les auteurs sont extrêmement sceptiques.</para>
+        <para>Affirmons cela haut et fort.</para>
+      </commentaires>
     </longévité-ans>
     <qualité-eau>
       <température-C>
+        <moy>25</moy>
         <min>20</min>
         <max>30</max>
+        <commentaires>
+          <para>On raconte qu’une source peu crédible a rapporté une température moyenne au-delà de
+            la température maximale.</para>
+          <para>Les présents auteurs ont choisi d’ignorer pareils racontars. Ils suggèrent aux
+            lectrices et lecteurs de faire de même.</para>
+        </commentaires>
       </température-C>
-      <ph>
+      <acidité-pH>
+        <moy>6</moy>
         <min>6</min>
-        <max>7.8</max>
-      </ph>
-      <dureté>
+        <max>7,8</max>
+        <commentaires>
+          <para>Nous sommes ici témoins d’un cas d’une rareté inouïe, où le pH moyen coïncide avec le
+          minimum.</para>
+          <para>Nous observons par ailleurs un autre phénomène d’une certaine rareté : une phrase
+            avec deux occurrences de la lettre « ï ».</para>
+        </commentaires>
+      </acidité-pH>
+      <dureté-dGH>
         <min>5</min>
         <max>12</max>
-      </dureté>
+        <commentaires>
+          <para>La dureté moyenne de l’eau est un concept mou et vague. Pour cette raison, et par une
+            décision qui n’a été sans créer de remous dans le milieu, nous avons opté pour
+            l’omission de cette information de la présente fiche.</para>
+          <para>Les lectrices et lecteurs qui pourraient malencontreusement se sentir lésés par
+            notre décision sont priés de soit interrompre leur lecture sur le champ, soit écrire à
+            leur député.</para>
+        </commentaires>
+      </dureté-dGH>
     </qualité-eau>
     <zone-de-vie>Inférieure</zone-de-vie>
     <alimentation>
@@ -52,6 +110,11 @@
         <titre>Petit déjeuner</titre>
         <para>Des granules de couleur verte sont un impératif pour le petit déjeuner de cette espèce
           très fine bouche.</para>
+        <para>Paradoxalement, il s’agit d’une espèce daltonienne, de sorte la couleur des granules
+          <em>n’a que <em>très peu</em> d’importance</em>. Cela étant dit, le coup d’œil est plus
+          agréable avec des granules vertes, d’où le conseil précédent.</para>
+        <para>Nous ne saurions trop insister sur <em>une esthétique <em>impeccable</em> dans la
+          tenue d’un aquarium !</em></para>
       </section>
       <section>
         <titre>Dîner</titre>
@@ -64,16 +127,31 @@
         <para>Il faut ici y aller d&#8217;œufs sous toutes les formes.</para>
       </section>
     </alimentation>
-    <description>
-      <para>Ne comettez surtout pas l&#8217;erreur de débutant de confondre l&#8217;Acanthicus
-        adonis avec le <lien id="poissonus_panus"/>.</para>
-    </description>
+    <aspect-physique>
+      <section>
+        <titre>Erreurs fréquentes</titre>
+        <para>Il faut bien se garder de commettre l&#8217;erreur de débutant de confondre
+          l&#8217;Acanthicus adonis avec le <lien id="poissonus_panus">Poissonus panus</lien>.</para>
+        <para>Une autre erreur fréquente survient du fait de l’orthographie difficile et problématique du
+          nom de cette espèce. Il est conseillé de se procurer la dernière version d’un correcteur
+          orthographique haut-de-gamme.</para>
+      </section>
+      <section>
+        <titre>Analyse spectrographique</titre>
+        <para>Sur les parties les plus claires, l’analyse spectrographique de la
+          couleur des écailles affiche une lecture avoisinant les 12,9 Å.</para>
+        <para>En contraste, les zones bleutées donnent une lecture d’environ 8,34 Å.</para>
+      </section>
+    </aspect-physique>
     <dimorphisme>
       <para>Présence d&#8217;épines plus longues et plus fournies chez le mâle. Femelle plus
         terne.</para>
+      <para>Si nous pouvons nous permettre un commentaire, notons qu’il s’agit entièrement et
+        exclusivement d’une question de goût. Terne, terne… qu’est-ce que cela veut dire au
+        juste, après tout?</para>
     </dimorphisme>
     <comportement>
-      <para>Très agressif avec ses congénères et d&#8217;autres «&#160;poissons-chats&#160;». mais
+      <para>Très agressif avec ses congénères et d&#8217;autres «&#160;poissons-chats&#160;», mais
         vit sans problèmes avec des cichlidaes. Compte tenu des exigences de filtration posées par
         le comportement alimentaire de cette espèce, les petits poissons ne sont probablement pas
         une bonne idée, mais aucun problème n&#8217;a été observé lorsque logés avec d&#8217;autres
@@ -87,8 +165,8 @@
     </comportement>
     <reproduction>
       <para>Le biologiste Joachim von Sweelinck, de Hambourg, a documenté des cas de métamorphose
-        d&#8217;individus de cette espèce en <lien id="chromobotia_macracanthus"/> d&#8217;une
+        d&#8217;individus de cette espèce en <lien id="chromobotia_macracanthus">Chromobotia macracanthus</lien> d&#8217;une
         taille dépassant les <long-cm>230</long-cm>&#160;!</para>
     </reproduction>
   </poisson>
-</fiche>
+</fiche-poisson>

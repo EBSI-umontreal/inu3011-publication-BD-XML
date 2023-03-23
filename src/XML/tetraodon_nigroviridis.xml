@@ -1,68 +1,68 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<?xml-stylesheet type="text/xsl" href="../xslt/stylage-poissons-metrique.xsl"?>
-<!DOCTYPE fiche SYSTEM "../DTD/fiche-poisson.dtd" >
-<fiche image="oui" id="tetraodon_nigroviridis">
-  <métadonnées>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../XSLT/XHTML.xsl"?>
+<!DOCTYPE fiche-poisson SYSTEM "../DTD/fiche-poisson.dtd" >
+<fiche-poisson image="oui" id="tetraodon_nigroviridis">
+  <mÃ©tadonnÃ©es>
     <date-dern-modif>2016-04-03</date-dern-modif>
-    <créateur>Marilou Bourque</créateur>
-    <créateur>Arnaud d&#8217;Alayer</créateur>
-  </métadonnées>
+    <crÃ©ateur>Marilou Bourque</crÃ©ateur>
+    <crÃ©ateur>Arnaud d&#8217;Alayer</crÃ©ateur>
+  </mÃ©tadonnÃ©es>
   <poisson>
     <noms>
       <nom-scientifique>Tetraodon nigroviridis</nom-scientifique>
       <nom-commun langue="en">Spotted Green Pufferfish</nom-commun>
     </noms>
-    <famille>Tetraodontidés</famille>
-    <origines>
+    <famille>TetraodontidÃ©s</famille>
+    <origines-gÃ©o>
       <origine>Asie - Asie du Sud-Est</origine>
       <commentaires>
-        <para>Plus précisément, voici les pays du Sud-Est où on le retrouve: Cambodge, Indonésie,
-          Malaisie, Myanmar, Philippines, Sri Lanka, Thaïlande et Vietnam.</para>
+        <para>Plus prÃ©cisÃ©ment, voici les pays du Sud-Est oÃ¹ on le retrouve: Cambodge, IndonÃ©sie,
+          Malaisie, Myanmar, Philippines, Sri Lanka, ThaÃ¯lande et Vietnam.</para>
       </commentaires>
-    </origines>
-    <première-description>
-      <nom-du-descripteur>Marion de Procé</nom-du-descripteur>
-      <année>1822</année>
-    </première-description>
+    </origines-gÃ©o>
+    <premiÃ¨re-description>
+      <nom-du-descripteur>Marion de ProcÃ©</nom-du-descripteur>
+      <annÃ©e>1822</annÃ©e>
+    </premiÃ¨re-description>
     <taille-cm>
-      <moy>15.0</moy>
+      <moy>15,0</moy>
     </taille-cm>
-    <qualité-eau>
-      <température-C>
+    <qualitÃ©-eau>
+      <tempÃ©rature-C>
         <min>24</min>
         <max>28</max>
-      </température-C>
-      <ph>
-        <min>8.0</min>
-        <max>8.0</max>
-      </ph>
-      <dureté>
+      </tempÃ©rature-C>
+      <aciditÃ©-pH>
+        <min>8,0</min>
+        <max>8,0</max>
+      </aciditÃ©-pH>
+      <duretÃ©-dGH>
         <min>9</min>
         <max>19</max>
-      </dureté>
-    </qualité-eau>
-    <zone-de-vie>Milieu et inférieure</zone-de-vie>
+      </duretÃ©-dGH>
+    </qualitÃ©-eau>
+    <zone-de-vie>Milieu et infÃ©rieure</zone-de-vie>
     <alimentation>
-      <para>Il se nourrit surtout de nourriture séchée ou vivante, et également de krill. Attention,
+      <para>Il se nourrit surtout de nourriture sÃ©chÃ©e ou vivante, et Ã©galement de krill. Attention,
         ce poisson mange tous les escargots qu&#8217;il voit, il en vide donc les bacs.</para>
     </alimentation>
-    <description>
-      <para>Il ressemble beaucoup au Tétraodon schoutedeni. Il est d&#8217;un vert clair, avec des
+    <aspect-physique>
+      <para>Il ressemble beaucoup au TÃ©traodon schoutedeni. Il est d&#8217;un vert clair, avec des
         taches noires. </para>
-      <para>Il n&#8217;est pas possible de le maintenir à long terme en eau douce mais en eau
-        saumâtre, sa maintenance n&#8217;est plus un problème. Ces poissons sont robustes et peu
+      <para>Il n&#8217;est pas possible de le maintenir Ã  long terme en eau douce mais en eau
+        saumÃ¢tre, sa maintenance n&#8217;est plus un problÃ¨me. Ces poissons sont robustes et peu
         enclins aux maladies.</para>
-    </description>
+    </aspect-physique>
     <comportement>
       <para>Occasionnellement, certains individus endommagent les nageoires des autres poissons et
-        d&#8217;autres se comportent agressivement envers les membres de leur propre espèce, mais
-        heureusement ces deux types de comportement sont plutôt des exceptions à la règle.</para>
+        d&#8217;autres se comportent agressivement envers les membres de leur propre espÃ¨ce, mais
+        heureusement ces deux types de comportement sont plutÃ´t des exceptions Ã  la rÃ¨gle.</para>
     </comportement>
     <reproduction>
-      <para>Le tétraodon nigroviridis est un pondeur sur substrat. La ponte est gardée par le mâle
-        jusqu&#8217;à l&#8217;éclosion.</para>
-      <para>Il semblerait qu&#8217;un croisement avec le <lien id="dascyllus_trimaculatus"/> soit
-        possible et ait déjà été observé.</para>
+      <para>Le tÃ©traodon nigroviridis est un pondeur sur substrat. La ponte est gardÃ©e par le mÃ¢le
+        jusqu&#8217;Ã  l&#8217;Ã©closion.</para>
+      <para>Il semblerait qu&#8217;un croisement avec le <lien id="dascyllus_trimaculatus">Dascyllus
+        trimaculatus</lien> soit possible et ait dÃ©jÃ  Ã©tÃ© observÃ©.</para>
     </reproduction>
   </poisson>
-</fiche>
+</fiche-poisson>

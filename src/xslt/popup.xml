@@ -7,9 +7,8 @@ fait)...
 IE lui, semble bien s'en tirer.
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> -->
-<popup xmlns="http://www.w3.org/1999/xhtml" lang="fr-ca" xml:lang="fr-ca">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr-ca" xml:lang="fr-ca">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
     <title>Popup des fiches</title>
   </head>
   <body>
@@ -18,7 +17,7 @@ IE lui, semble bien s'en tirer.
       <p>La valeur du pH indique le degré d’acidité ou l’alcalinité d’une eau. Le point neutre correspond à l’équilibre base-acide. Une valeur de 7 indique le point neutre, une valeur supérieure à 7 indique une eau alcaline, une valeur inférieure à 7 indique une eau acide.</p>
     </div>
     <div id="popup-gh">
-      <h3>gH</h3>
+      <h3>dGH</h3>
       <p>La dureté caractérise la quantité d’oxyde de calcium ou (et) de magnésium dissoute dans l’eau.</p>
       <table class="encadré">
         <tr>
@@ -26,30 +25,30 @@ IE lui, semble bien s'en tirer.
           <th>Signification</th>
         </tr>
         <tr>
-          <td>0 - 4° dGH</td>
+          <td>0-4 dGH</td>
           <td>très douce</td>
         </tr>
         <tr>
-          <td>4 - 8° dGH</td>
+          <td>4-8 dGH</td>
           <td>douce</td>
         </tr>
         <tr>
-          <td>8 - 12° dGH</td>
+          <td>8-12 dGH</td>
           <td>moyennement dure</td>
         </tr>
         <tr>
-          <td>12 - 18° dGH</td>
+          <td>12-18 dGH</td>
           <td>assez dure</td>
         </tr>
         <tr>
-          <td>18 - 30° dGH</td>
+          <td>18-30 dGH</td>
           <td>dure</td>
         </tr>
         <tr>
-          <td>&gt; 30° dGH</td>
+          <td>&gt; 30 dGH</td>
           <td>très dure</td>
         </tr>
       </table>
     </div>
   </body>
-</popup>
+</html>

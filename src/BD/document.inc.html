@@ -2,12 +2,13 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>INU3011 - Afficher document</title>
 	</head>
 	<body>
 		<h1>INU3011 - Afficher document</h1>
 	<h2>Document: 
-	<?php echo substr($document, strlen($nomBaseDeDonnees) + 1); ?></h2>
+	<?php echo substr($document, strlen($nomBaseDeDonnees) + 2); ?></h2>
 <?php
 	$result = executerXquery('doc("' . fixdocuri($document) . '")/*');
 // YMA 2010-04-02 le "/*" ci-dessus permet d'éliminer les PI xml-stylesheet
